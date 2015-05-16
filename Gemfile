@@ -1,22 +1,28 @@
 source 'https://rubygems.org'
 
+ruby "2.2.2"
 
 gem 'rails', '4.2.1'
-
 gem 'rails-api'
 
-gem 'spring', :group => :development
+group :development do
+  gem 'spring'
+end
 
+group :development, :test do
+  gem 'sqlite3'
+end
 
-gem 'sqlite3'
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
-
+# To use Jbuilder templates for JSON
+gem 'jbuilder'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'
