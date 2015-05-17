@@ -4,9 +4,9 @@ Abstract syntax parse server
 [![Build Status](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend.svg?branch=master)](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend)
 
 # Write later
-先生
+先生(プロダクトオーナ)
 ---------------
-- [Yoshihide Chubachi](https://github.com/ychubachi):中鉢 欣秀(プロダクトオーナー)
+- [Yoshihide Chubachi](https://github.com/ychubachi):中鉢 欣秀
 
 Team members(スクラムマスターを週ごとの持ち回り制)
 ---------------
