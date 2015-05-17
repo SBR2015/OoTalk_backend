@@ -25,5 +25,5 @@ Team members(スクラムマスターを週ごとの持ち回り制)
 App information
 ---------------
 - [Travis CI](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend)
-- [Heroku](https://sleepy-oasis-2856.herokuapp.com)
+- [Heroku](http://infinite-river-1447.herokuapp.com)
 - [産業技術大学院大学](http://aiit.ac.jp/)
