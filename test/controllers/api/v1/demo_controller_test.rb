@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DemosControllerTest < ActionController::TestCase
+class Api::V1::DemoControllerTest < ActionController::TestCase
   setup do
     @demo = demos(:one)
   end
