@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.2.2
+  - 2.2.2
 deploy:
   provider: heroku
   api_key:
@@ -10,6 +10,10 @@ deploy:
     branch: master
     repo: AIIT-2015PBL-TeamPractice/as_backend
   run:
+    - 'npm install -g bower grunt-cli'
+    - 'cd client'
+    - 'bower install'
+    - 'grunt'
     - 'rake db:migrate'
 notifications:
   slack:
