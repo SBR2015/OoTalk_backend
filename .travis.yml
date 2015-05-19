@@ -5,7 +5,7 @@ deploy:
   provider: heroku
   api_key:
     secure: Cu2bFl4AEQ4raLr+zkZdDurhHPRgwxTGhynFzuj20XJTDkHXvPZnnMK4btAwiP9uzYrFvLuBkYIsPaeQlKk/HVVDJOWsNJplzyAGquelKO8EvuPEvG417VsO1hi4ZlExyTpwfDiosPut1nk9aMkQhEt/7C/Mdv3jRC9CFh72YsoGNEaTUj1OfiSCUXPg95Mmp45eUc/pV5gm4LWw3QfCV8GpE1YfxHH1vEmixwlyKHMEF7loZ9x/xyh5qiK6pnZSBnfehP4kA+F8bpAsHUbZNfs6ry3C0YWbi5+p+yU8JbZ9v7CUMl3gqg5jLKKq40MPgdy3q161vxjHTvjNPLkCgf+fKVWRgDfLlBoPJ1U67H650vEK7q3Q7wm3urqxFDjEQYjVLBsZ5ziWwMyK+HfxQk9inpDt1+34E5KC+FVfZ6mc2KAeFxcdzZ07uBp73cJUqLsnVBT6hmgQG3/qlqIWdCHuqLXJ62j89qRceXrO3tAhPv4O4MiFhWISlCh468TT5T5Wht2a7MsC2m/bV5STAjz/febSsmFqqqyClK+HtKLnmi5VqcSWZJ5TNKWeqnODzbtaTncvk2RCGz2D5gvZjeHiFFSQ5VzDUpAKMKCfZw09JDU0pC3vkkcpQ6yqBMzUfZrb7ZZdDy8IR+CsBQJebV00oLM/ZWkUCBP8yexI1sc=
-  app: shrouded-basin-1455
+  app: floating-citadel-6093
   on:
     branch: master
     repo: AIIT-2015PBL-TeamPractice/as_backend
