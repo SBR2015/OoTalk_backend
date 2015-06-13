@@ -15,6 +15,11 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# OoTalkライブラリの読み込み
+Dir[File.expand_path(Rails.root.join('app/assets/OoTalk/lib/'), __FILE__) << '/*.rb'].each do |file|
+  require file
+end
+
 module OoTalkBackend
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
