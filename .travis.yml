@@ -1,0 +1,29 @@
+language: ruby
+rvm:
+- 2.2.2
+
+bundler_args: "--without development production"
+
+before_install:
+  - gem update --system
+  - gem --version
+
+script:
+  - git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk
+  - bundle exec rake db:drop db:create db:migrate
+  - bundle exec rspec spec
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: Cu2bFl4AEQ4raLr+zkZdDurhHPRgwxTGhynFzuj20XJTDkHXvPZnnMK4btAwiP9uzYrFvLuBkYIsPaeQlKk/HVVDJOWsNJplzyAGquelKO8EvuPEvG417VsO1hi4ZlExyTpwfDiosPut1nk9aMkQhEt/7C/Mdv3jRC9CFh72YsoGNEaTUj1OfiSCUXPg95Mmp45eUc/pV5gm4LWw3QfCV8GpE1YfxHH1vEmixwlyKHMEF7loZ9x/xyh5qiK6pnZSBnfehP4kA+F8bpAsHUbZNfs6ry3C0YWbi5+p+yU8JbZ9v7CUMl3gqg5jLKKq40MPgdy3q161vxjHTvjNPLkCgf+fKVWRgDfLlBoPJ1U67H650vEK7q3Q7wm3urqxFDjEQYjVLBsZ5ziWwMyK+HfxQk9inpDt1+34E5KC+FVfZ6mc2KAeFxcdzZ07uBp73cJUqLsnVBT6hmgQG3/qlqIWdCHuqLXJ62j89qRceXrO3tAhPv4O4MiFhWISlCh468TT5T5Wht2a7MsC2m/bV5STAjz/febSsmFqqqyClK+HtKLnmi5VqcSWZJ5TNKWeqnODzbtaTncvk2RCGz2D5gvZjeHiFFSQ5VzDUpAKMKCfZw09JDU0pC3vkkcpQ6yqBMzUfZrb7ZZdDy8IR+CsBQJebV00oLM/ZWkUCBP8yexI1sc=
+  app: floating-citadel-6093
+  on:
+    branch: master
+    repo: AIIT-2015PBL-TeamPractice/as_backend
+  run:
+    - 'git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk'
+    - 'rake db:migrate'
+notifications:
+  slack:
+    secure: MxrFE7xYqFFiFJ0Fax4DMewQt/ynjp3mN1rmpHoTz8CHBjqZUFVkbwS7bm3lm7dcVrLqWj/1bbSwZlW+M5/JddbOtNtlCpO9ELg8yenO7xqNai+PuIJHVi1nchEtBJoeN2CQEzYZKiD17qaVPohUbCyQr9CTtChy4BWOHh0ck2nalXDqlgEa977fjX1IjvFDSuYu+PEVL9a2BoBH70l7A0Nwqt7EP0wP9xbnNVLzHPkYL71KOcyhEG7wr4da/4o3aE6nn0lYelceASCwamKEGWSkq/RK3SSOPp48K4xEV/QwJIgXXk1VtoB90bq4yB612CHsQrSTOP5SXFAE5E0rs7sp5k2H5bvJK52C5tf88eBfOUDUYe034p96ZP18OMjrqT1IWc/WOIgCHtcaZuDuvuXBgEXYOebr1UA1nfvpeXIzjlsLRTcgnr8lX7QQuEE1kOKMBfGWjz7C5BMJx6AbTzJdCjT7gMC506bROgjB9IWVBoYJLnSbhG9L8hxcTTufMJtuR6XbIydMOnG2hyrW1qJmfbT80wDDutn7xcPeeGlvLX+qlG6HU99NWpVG0sDt2fY5sPR1H3HO3FBUe18z3sDxGVmUUK/n4kQImvL5EzqRyu4gOmzDOwnUFtkohW6UsAc78MS4uACdmMln5iLcrT8TQgll+MLGOT3+KR4A1L4=
