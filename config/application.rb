@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # OoTalkライブラリの読み込み
-require 'OoTalk'
+require 'ootalk'
 include OoTalk
 
 require "rails"

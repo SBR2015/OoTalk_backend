@@ -6,7 +6,6 @@ before_install:
 - gem update --system
 - gem --version
 script:
-- git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk
 - bundle exec rake db:drop db:create db:migrate
 - bundle exec rspec spec
 notifications:
@@ -21,5 +20,4 @@ deploy:
     repo: SBR2015/OoTalk_backend
     branch: master
   run:
-    - 'git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk'
     - 'rake db:migrate'
