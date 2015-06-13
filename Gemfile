@@ -108,3 +108,6 @@ gem 'httpclient'
 # old OoTalk_backend
 # gem 'compass', :require => false
 # gem 'rails-api'
+
+# gem OoTalk
+gem 'OoTalk', git: "https://github.com/SBR2015/ootalk.git", branch: "master"
