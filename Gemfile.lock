@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/SBR2015/ootalk.git
-  revision: d1aa2d372fdfb6ad777f2e898bf14d4fcf7977ef
-  branch: master
+  revision: 0c842bd9b3f79a7db03691a35e8d50412e602bbe
   specs:
-    OoTalk (0.0.1)
+    ootalk (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -310,7 +309,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  OoTalk!
   better_errors
   binding_of_caller
   byebug
@@ -324,6 +322,7 @@ DEPENDENCIES
   httpclient
   jbuilder (~> 2.0)
   jquery-rails
+  ootalk!
   pg
   pry
   pry-byebug

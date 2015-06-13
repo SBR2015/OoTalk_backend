@@ -95,6 +95,8 @@ end
 # Use http Clients
 gem 'httpclient'
 
+# OoTalk
+gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git'
 # database settings
 # gem 'foreigner'
 
@@ -109,5 +111,3 @@ gem 'httpclient'
 # gem 'compass', :require => false
 # gem 'rails-api'
 
-# gem OoTalk
-gem 'OoTalk', git: "https://github.com/SBR2015/ootalk.git", branch: "master"
