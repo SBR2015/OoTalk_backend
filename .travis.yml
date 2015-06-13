@@ -1,29 +1,25 @@
 language: ruby
 rvm:
 - 2.2.2
-
 bundler_args: "--without development production"
-
 before_install:
-  - gem update --system
-  - gem --version
-
+- gem update --system
+- gem --version
 script:
-  - git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk
-  - bundle exec rake db:drop db:create db:migrate
-  - bundle exec rspec spec
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: Cu2bFl4AEQ4raLr+zkZdDurhHPRgwxTGhynFzuj20XJTDkHXvPZnnMK4btAwiP9uzYrFvLuBkYIsPaeQlKk/HVVDJOWsNJplzyAGquelKO8EvuPEvG417VsO1hi4ZlExyTpwfDiosPut1nk9aMkQhEt/7C/Mdv3jRC9CFh72YsoGNEaTUj1OfiSCUXPg95Mmp45eUc/pV5gm4LWw3QfCV8GpE1YfxHH1vEmixwlyKHMEF7loZ9x/xyh5qiK6pnZSBnfehP4kA+F8bpAsHUbZNfs6ry3C0YWbi5+p+yU8JbZ9v7CUMl3gqg5jLKKq40MPgdy3q161vxjHTvjNPLkCgf+fKVWRgDfLlBoPJ1U67H650vEK7q3Q7wm3urqxFDjEQYjVLBsZ5ziWwMyK+HfxQk9inpDt1+34E5KC+FVfZ6mc2KAeFxcdzZ07uBp73cJUqLsnVBT6hmgQG3/qlqIWdCHuqLXJ62j89qRceXrO3tAhPv4O4MiFhWISlCh468TT5T5Wht2a7MsC2m/bV5STAjz/febSsmFqqqyClK+HtKLnmi5VqcSWZJ5TNKWeqnODzbtaTncvk2RCGz2D5gvZjeHiFFSQ5VzDUpAKMKCfZw09JDU0pC3vkkcpQ6yqBMzUfZrb7ZZdDy8IR+CsBQJebV00oLM/ZWkUCBP8yexI1sc=
-  app: floating-citadel-6093
-  on:
-    branch: master
-    repo: AIIT-2015PBL-TeamPractice/as_backend
-  run:
-    - 'git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk'
-    - 'rake db:migrate'
+- git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk
+- bundle exec rake db:drop db:create db:migrate
+- bundle exec rspec spec
 notifications:
   slack:
     secure: MxrFE7xYqFFiFJ0Fax4DMewQt/ynjp3mN1rmpHoTz8CHBjqZUFVkbwS7bm3lm7dcVrLqWj/1bbSwZlW+M5/JddbOtNtlCpO9ELg8yenO7xqNai+PuIJHVi1nchEtBJoeN2CQEzYZKiD17qaVPohUbCyQr9CTtChy4BWOHh0ck2nalXDqlgEa977fjX1IjvFDSuYu+PEVL9a2BoBH70l7A0Nwqt7EP0wP9xbnNVLzHPkYL71KOcyhEG7wr4da/4o3aE6nn0lYelceASCwamKEGWSkq/RK3SSOPp48K4xEV/QwJIgXXk1VtoB90bq4yB612CHsQrSTOP5SXFAE5E0rs7sp5k2H5bvJK52C5tf88eBfOUDUYe034p96ZP18OMjrqT1IWc/WOIgCHtcaZuDuvuXBgEXYOebr1UA1nfvpeXIzjlsLRTcgnr8lX7QQuEE1kOKMBfGWjz7C5BMJx6AbTzJdCjT7gMC506bROgjB9IWVBoYJLnSbhG9L8hxcTTufMJtuR6XbIydMOnG2hyrW1qJmfbT80wDDutn7xcPeeGlvLX+qlG6HU99NWpVG0sDt2fY5sPR1H3HO3FBUe18z3sDxGVmUUK/n4kQImvL5EzqRyu4gOmzDOwnUFtkohW6UsAc78MS4uACdmMln5iLcrT8TQgll+MLGOT3+KR4A1L4=
+deploy:
+  provider: heroku
+  api_key:
+    secure: jNkUDqemcYAeiohdo/Qn0PjyFdptSz2Ae44tlONK6G8dTf+kZG8ujadP4E2t+7b7af9V1wIPXu2FengP0gVHmeM2MbBz3iN5S9Jp4ojQf/BBRc1R9YDLrhR1S2oTDrZx0spSMGTFIksb4UZSrCQEWPLGRyZvsBIQWo3OeZs6dveTPMcHCnS8qchYLMqqFBU6SAG4iGilnSDqcbhucttEpAwPQu/Ojz6596VrcwaBocAn+r4vY/IGIoqKAoodboy9rx0n+H7Y1Jvl6ml2xjy9xbN9LcKBotWRKzRRC9GUnHIiyhITe9+f8uiZYucgA+9gEJsKxlhX9aqWvhnlEOqdlsCu6YFXTdmYlp5MHJsRRkKu7M5G1JEtcwAXojkWXh2RWuHpKKHrF0e5Pnvw6GQ6MDMn59TVxdv57ooyo3Ms2PWKA+BSYreF4DVbnMTbEBjMRssIIgRWkrRbpRfndtpfaWc/lwbx8xNiWenDPnmA9SzGRC5wJGYZz7TzLzjSyCyEqHMrJmhrqA0U22EU614Nz0DJLB3GdFhfc6yJYtc8MSm1H2JoiQyZwfG3txg5vtnNcs/J+Jv7Iv/IR4abUq0ez1COw86VIyE3gp05bVEuUmW6kOhNYxJgWR/sDLPlyI0ZcUP1EInFzLuY/Xj0TIbCshyrU4WUTxE55bEy/3NT9Uk=
+  app: ootalkbackend
+  on:
+    repo: SBR2015/OoTalk_backend
+    branch: master
+  run:
+    - 'git clone https://github.com/SBR2015/OoTalk.git app/assets/OoTalk'
+    - 'rake db:migrate'
