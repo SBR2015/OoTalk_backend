@@ -1,5 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
+# OoTalkライブラリの読み込み
+require 'OoTalk'
+include OoTalk
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
@@ -28,13 +32,6 @@ module OoTalkBackend
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    # OoTalkライブラリの読み込み
-    # Dir[File.expand_path(Rails.root.join('app/assets/OoTalk/lib/ootalk'), __FILE__) << '/*.rb'].each do |file|
-    #   require file
-    # end
-    # require 'OoTalk'
-    # require Rails.root.join('app/assets/OoTalk/lib/ootalk.rb')
-    # require 'OoTalk!'
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
