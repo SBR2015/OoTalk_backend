@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # root 'api/v1/abstract_syntax#index'
+  root 'api/v1/abstract_syntax#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
