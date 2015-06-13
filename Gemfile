@@ -95,6 +95,7 @@ end
 # Use http Clients
 gem 'httpclient'
 
+gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git'
 # database settings
 # gem 'foreigner'
 

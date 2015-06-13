@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/SBR2015/ootalk.git
+  revision: 0c842bd9b3f79a7db03691a35e8d50412e602bbe
+  specs:
+    ootalk (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -316,6 +322,7 @@ DEPENDENCIES
   httpclient
   jbuilder (~> 2.0)
   jquery-rails
+  ootalk!
   pg
   pry
   pry-byebug
