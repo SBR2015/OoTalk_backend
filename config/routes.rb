@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  # API v1
+  namespace :api do
+    namespace :v1 do
+      resources :abstract_syntax, only: [:index], path: :abstractsyntax
+      # match 'abstractsyntax', to: 'api/v1/abstract_syntax#index', via: 'get'
+    end
+  end
+
+  # root 'api/v1/abstract_syntax#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
