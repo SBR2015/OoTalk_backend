@@ -1,3 +1,5 @@
+require 'OoTalk'
+
 class Api::V1::AbstractSyntaxController < ApplicationController
   def index
   end
