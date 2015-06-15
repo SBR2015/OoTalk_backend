@@ -4,6 +4,8 @@ Abstract syntax parse server
 [![Build Status](https://travis-ci.org/SBR2015/OoTalk_backend.svg?branch=master)](https://travis-ci.org/SBR2015/OoTalk_backend)
 [![Code Climate](https://codeclimate.com/github/SBR2015/OoTalk_backend/badges/gpa.svg)](https://codeclimate.com/github/SBR2015/OoTalk_backend)
 [![Test Coverage](https://codeclimate.com/github/SBR2015/OoTalk_backend/badges/coverage.svg)](https://codeclimate.com/github/SBR2015/OoTalk_backend/coverage)
+[![Dependency Status](https://gemnasium.com/SBR2015/OoTalk_backend.svg)](https://gemnasium.com/SBR2015/OoTalk_backend)
+
 
 # Write later
 先生(プロダクトオーナ)
