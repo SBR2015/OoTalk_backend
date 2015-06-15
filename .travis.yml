@@ -8,9 +8,6 @@ before_install:
 script:
 - bundle exec rake db:drop db:create db:migrate
 - bundle exec rspec spec
-notifications:
-  slack:
-    secure: MxrFE7xYqFFiFJ0Fax4DMewQt/ynjp3mN1rmpHoTz8CHBjqZUFVkbwS7bm3lm7dcVrLqWj/1bbSwZlW+M5/JddbOtNtlCpO9ELg8yenO7xqNai+PuIJHVi1nchEtBJoeN2CQEzYZKiD17qaVPohUbCyQr9CTtChy4BWOHh0ck2nalXDqlgEa977fjX1IjvFDSuYu+PEVL9a2BoBH70l7A0Nwqt7EP0wP9xbnNVLzHPkYL71KOcyhEG7wr4da/4o3aE6nn0lYelceASCwamKEGWSkq/RK3SSOPp48K4xEV/QwJIgXXk1VtoB90bq4yB612CHsQrSTOP5SXFAE5E0rs7sp5k2H5bvJK52C5tf88eBfOUDUYe034p96ZP18OMjrqT1IWc/WOIgCHtcaZuDuvuXBgEXYOebr1UA1nfvpeXIzjlsLRTcgnr8lX7QQuEE1kOKMBfGWjz7C5BMJx6AbTzJdCjT7gMC506bROgjB9IWVBoYJLnSbhG9L8hxcTTufMJtuR6XbIydMOnG2hyrW1qJmfbT80wDDutn7xcPeeGlvLX+qlG6HU99NWpVG0sDt2fY5sPR1H3HO3FBUe18z3sDxGVmUUK/n4kQImvL5EzqRyu4gOmzDOwnUFtkohW6UsAc78MS4uACdmMln5iLcrT8TQgll+MLGOT3+KR4A1L4=
 deploy:
   provider: heroku
   api_key:
@@ -20,4 +17,7 @@ deploy:
     repo: SBR2015/OoTalk_backend
     branch: master
   run:
-    - 'rake db:migrate'
+  - rake db:migrate
+notifications:
+  slack:
+    secure: GSiZJlsXCfwJLKXg8x5Io1NJKTanjzLas+uUsljPytC9mkMKmSpbX4UuSUrddfpxfjVlSIMCLe/NCoYl8VUD+Knu+1TQQKGO0QSYq6cZwyIETjGb0sDs1uHs8izl5n+hJ9SqnpPUpwYvidCkzcwjHg2Nv3abnZ4+oZ/YAovmL5skQ+ybLluxPWZPHHoCKHrbcqmXj7q4d1mAgwxgyLhQ52eXaU0Rwt6p+91zAIJX3sUCJ13eHKJgH1/v9gSGEhrZrLjGMr6WjpkPRtpEvU2hWd7inq3WnjKfNIF1lCtIKFkmq4M+vyoGVGuCiB1PBJLJcOJI2caWGckQnBGMmywXSd0Ayib1z+DRRDHZ86+wOJN7kFPUOs8a1miX9u/xN9sWrOjFvI7aCuFOjQyKxUmJa7rkYdYJ3JBJBEc/vtlf/iNV5a5cLlK/NO6d7cUa2+9Q9JksQxsrD1B13wSmBq8R+YGg8Ij9F/Jt2riZnQa1/UFKjmBAgD0IcjDF9whudsWXNwnHv8dggV9n+bEVFOvkb+2L308g271d31mZ1MKAG7351SIR1o17O0RPE8pEmTG2RdCFif48A/kS4laRAoPZ//cvfXuSYChynJsIqr1IBv9r578RD1kjEW++AMDrj09HWUsTrwVdLglDdmFsjfixlOnQ0IDaTXV2Zg14OCZNGx4=
