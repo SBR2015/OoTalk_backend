@@ -83,6 +83,11 @@ group :development do
 
 end
 
+# codeclimate
+group :test do
+  gem "codeclimate-test-reporter", require: nil
+end
+
 # heroku settings
 group :production do
   gem 'rails_12factor',    group: :production

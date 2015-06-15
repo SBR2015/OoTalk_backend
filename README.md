@@ -1,7 +1,9 @@
 Abstract syntax parse server
 -------------------------------
 
-[![Build Status](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend.svg?branch=master)](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend)
+[![Build Status](https://travis-ci.org/SBR2015/OoTalk_backend.svg?branch=master)](https://travis-ci.org/SBR2015/OoTalk_backend)
+[![Code Climate](https://codeclimate.com/github/SBR2015/OoTalk_backend/badges/gpa.svg)](https://codeclimate.com/github/SBR2015/OoTalk_backend)
+[![Test Coverage](https://codeclimate.com/github/SBR2015/OoTalk_backend/badges/coverage.svg)](https://codeclimate.com/github/SBR2015/OoTalk_backend/coverage)
 
 # Write later
 先生(プロダクトオーナ)
@@ -24,6 +26,6 @@ Team members(スクラムマスターを週ごとの持ち回り制)
 
 App information
 ---------------
-- [Travis CI](https://travis-ci.org/AIIT-2015PBL-TeamPractice/as_backend)
-- [Heroku](http://floating-citadel-6093.herokuapp.com)
+- [Travis CI](https://travis-ci.org/SBR2015/OoTalk_backend)
+- [Heroku](http://ootalkbackend.herokuapp.com)
 - [産業技術大学院大学](http://aiit.ac.jp/)
