@@ -48,7 +48,7 @@ group :development, :test do
   gem 'spring'
 
   # BDD
-  gem 'rspec-rails', '~> 3.2.1'
+  gem 'rspec-rails'
   gem 'spring-commands-rspec'
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
