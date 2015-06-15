@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: 2fb43731f9d1bfd62d222ecafde5b6da916df84f
+  revision: 8e3a566cd90e44a91605376ef8aa52a1a45ab509
   specs:
     ootalk (0.0.1)
 
@@ -124,7 +124,7 @@ GEM
     http_parser.rb (0.6.0)
     httpclient (2.6.0.1)
     i18n (0.7.0)
-    jbuilder (2.2.16)
+    jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
