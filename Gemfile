@@ -63,7 +63,7 @@ end
 
 group :development do
   # Use travis CI command
-  gem 'travis'
+  # gem 'travis'
 
   # JavaScript Interpreter
   gem 'therubyracer', platforms: :ruby
