@@ -10,11 +10,13 @@ class AbstractSyntaxLists
       abstract_syntax_lists = $("#abstract_syntax_lists")
 
       for l in lists
-        line = $("<p></p>",
+        line = $('<div></div>',
 #          id: l.id,
 #          class_name: l.class_name,
+          class: "abstract_syntax",
           id: l.class_name,
-#          string: l.string
+          draggable: true,
+          string: l.string
         ).text(l.name)
         console.log(line)
         abstract_syntax_lists.append(line)
