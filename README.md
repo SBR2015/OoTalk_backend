@@ -6,6 +6,13 @@ Abstract syntax parse server
 [![Test Coverage](https://codeclimate.com/github/SBR2015/OoTalk_backend/badges/coverage.svg)](https://codeclimate.com/github/SBR2015/OoTalk_backend/coverage)
 [![Dependency Status](https://gemnasium.com/SBR2015/OoTalk_backend.svg)](https://gemnasium.com/SBR2015/OoTalk_backend)
 
+Usage
+-----
+
+```
+bundle install --without production
+bin/rails server
+```
 
 # Write later
 先生(プロダクトオーナ)
