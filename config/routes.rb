@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # Coding page
+  root 'code#index'
+
+  # Json Coding page
+  resources :code_json, only: [:index], path: :codejson
+
   # API v1
   namespace :api do
     namespace :v1 do
@@ -8,7 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'code#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
