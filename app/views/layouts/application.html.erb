@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OoTalkBackend</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>OoTalk</title>
+  <!-- CDN installation -->
+  <%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
+  <%= javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
+  <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" %>
+
+  <!-- Rails Default settings -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/nav' %>
+  <article>
+    <%= yield %>
+  </article>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
