@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'program/index'
+
   # API v1
   namespace :api do
     namespace :v1 do
