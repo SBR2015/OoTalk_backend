@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ProgramController, type: :controller do
+RSpec.describe CodeController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: eb5c62027bd574947214ce0a655214199af291f7
+  revision: 3618d247959a3add64ecb36feb2869640823fb0d
   specs:
     ootalk (0.2.0)
 
@@ -207,7 +207,7 @@ GEM
     rspec-expectations (3.3.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
-    rspec-mocks (3.3.0)
+    rspec-mocks (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-rails (3.3.2)

@@ -11,11 +11,11 @@ class AbstractSyntaxLists
 
       for l in lists
         line = $("<p></p>",
-          id: l.id,
-          class_name: l.class_name,
-          name: l.name,
-          string: l.string
-        )
+#          id: l.id,
+#          class_name: l.class_name,
+          id: l.class_name,
+#          string: l.string
+        ).text(l.name)
         console.log(line)
         abstract_syntax_lists.append(line)
     )
