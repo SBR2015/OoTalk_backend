@@ -88,5 +88,5 @@ RSpec.configure do |config|
 =end
 
   config.color = true
-  CodeClimate::TestReporter.start unless ENV['CODECLIMATE_REPO_TOKEN'] == nil
+  CodeClimate::TestReporter.start unless ENV['CODECLIMATE_REPO_TOKEN'].nil?
 end
