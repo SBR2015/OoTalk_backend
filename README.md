@@ -9,9 +9,9 @@ Abstract syntax parse server
 Usage
 -----
 
-```
-bundle install --without production
-bin/rails server
+```bash
+$ bundle install --without production
+$ bundle exec rails s
 ```
 
 # Write later

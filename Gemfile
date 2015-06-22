@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '2.2.2'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -90,10 +90,10 @@ end
 
 # heroku settings
 group :production do
-  gem 'rails_12factor',    group: :production
+  gem 'rails_12factor'
   gem 'pg'
   gem 'unicorn'
-#  gem 'newrelic_rpm'
+  gem 'newrelic_rpm'
 
 end
 
