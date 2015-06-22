@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '2.2.2'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -93,7 +93,7 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
   gem 'unicorn'
-#  gem 'newrelic_rpm'
+  gem 'newrelic_rpm'
 
 end
 
