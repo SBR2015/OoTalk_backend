@@ -22,7 +22,7 @@ abstractSyntaxLists = ->
 #          class: "abstract_syntax",
           class: "ui-widget-content",
 #          id: l.class_name,
-          id: "draggable",
+          #id: "draggable"#,
 #          draggable: true,
           string: l.string
         ).text(l.name)
@@ -35,30 +35,53 @@ abstractSyntaxLists = ->
         snap: "#input_code",
         opacity: 0.4,
 #        revert: true
-        scroll: true
+        scroll: true,
+        helper: "clone",
+#        helper: "original",
+        start: (event, ui) ->
+          console.log "start drag"
+          offset = $(this).offset()
+          xPos = offset.left
+          yPos = offset.top
+          console.log "x = " + xPos + " y = " + yPos
+
+        drag: (event, ui) ->
+          console.log "while drag"
+
+        stop: (event, ui) ->
+          console.log "stop drag"
+          $(ui.draggable).clone().appendTo(this)
+          $(ui.draggable).remove()
+#          $(this).append($(ui.helper).clone())
+#          if $(ui.draggable).find('#abstract_syntax_lists div').length == 0
+#            $(this).draggable().append($(ui.helper).clone())
       })
 
+#      $("#abstract_syntax_lists div").live('dblclick', ->
+#        $(this).remove()
+#      )
       # Drag開始の処理
-      $('#abstract_syntax_lists div').on('dragstart', (event, ui) ->
-        console.log "start drag"
-      )
+#      $('#abstract_syntax_lists div').on('dragstart', (event, ui) ->
+#        console.log "start drag"
+#        offset = $(this).offset()
+#        xPos = offset.left
+#        yPos = offset.top
+#        console.log "x = " + xPos + " y = " + yPos
+#        ui.clone.appendTo(this)
+#      )
 
       # Drag中の処理
-      $('#abstract_syntax_lists div').on('drag', (event, ui) ->
-        console.log "while drag"
-      )
+#      $('#abstract_syntax_lists div').on('drag', (event, ui) ->
+#        console.log "while drag"
+#      )
 
       # Drag終了の処理
-      $('#abstract_syntax_lists div').on('dragstop', (event, ui) ->
-        console.log "stop drag"
-      )
+#      $('#abstract_syntax_lists div').on('dragstop', (event, ui) ->
+#        $(this).append($(ui.helper).clone())
+#      )
 
     )
 
-#    $('#abstract_syntax_lists div').draggable({
-#      axis: "y"
-#    })
-#    console.log "hello"
 
 #createProgram = ->
 #  $ ->
