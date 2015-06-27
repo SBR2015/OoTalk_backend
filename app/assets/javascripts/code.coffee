@@ -18,12 +18,8 @@ abstractSyntaxLists = ->
       for l in lists
         line = $('<div></div>',
 #          id: l.id,
-#          class_name: l.class_name,
-#          class: "abstract_syntax",
           class: "ui-widget-content",
-#          id: l.class_name,
-          #id: "draggable"#,
-#          draggable: true,
+          class_name: l.class_name,
           string: l.string
         ).text(l.name)
 #        console.log(line)
@@ -37,25 +33,51 @@ abstractSyntaxLists = ->
 #        revert: true
         scroll: true,
         helper: "clone",
-#        helper: "original",
         start: (event, ui) ->
           console.log "start drag"
-          offset = $(this).offset()
-          xPos = offset.left
-          yPos = offset.top
-          console.log "x = " + xPos + " y = " + yPos
+          $(ui.helper).text($(ui.helper).attr('string'))
+
+#          offset = $(this).offset()
+#          xPos = offset.left
+#          yPos = offset.top
+#          console.log "x = " + xPos + " y = " + yPos
 
         drag: (event, ui) ->
           console.log "while drag"
 
         stop: (event, ui) ->
           console.log "stop drag"
-          $(ui.draggable).clone().appendTo(this)
-          $(ui.draggable).remove()
+#          $(ui.draggable).clone().appendTo(this)
+#          $(ui.draggable).remove()
 #          $(this).append($(ui.helper).clone())
 #          if $(ui.draggable).find('#abstract_syntax_lists div').length == 0
 #            $(this).draggable().append($(ui.helper).clone())
       })
+
+      # Drop初期化
+      $('#input_code').droppable({
+        drop: (event, ui) ->
+          console.log "drop"
+          $(ui.helper).text($(ui.helper).attr('string'))
+          clone_dragged = $(ui.draggable).clone()
+          $(this).append(clone_dragged.text(clone_dragged.attr('string'))).removeClass()
+
+#          console.log "this = " + clone_dragged.attr('string')
+
+#          $(hoge).text($(hoge).attr('string'))
+#          $(hoge).text($(ui.helper).attr('string'))
+#          $(ui.helper).disableSelection()
+#          $(this).attr('class_name')
+#          $(this).remove()
+      })
+
+      # Sort初期化
+      $('#input_code').sortable({
+#        grid: [20, 10]
+#        connectWith: ".connectedSortable"
+        stop: (event, ui) ->
+          $(ui.helper).remove()
+      }).disableSelection()
 
 #      $("#abstract_syntax_lists div").live('dblclick', ->
 #        $(this).remove()
