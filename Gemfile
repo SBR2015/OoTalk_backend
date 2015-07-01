@@ -66,7 +66,8 @@ group :development do
   # gem 'travis'
 
   # JavaScript Interpreter
-  gem 'therubyracer', platforms: :ruby
+  # gem 'therubyracer', platforms: :ruby
+  # ver 3.16.14.8 error
 
   # Debugger
   gem 'pry'

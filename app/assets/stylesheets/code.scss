@@ -17,3 +17,18 @@
 //  vertical-align: middle;
 //  margin-bottom: 10px;
 }
+
+#input_code {
+  border: 1px solid black;
+  min-height: 400px;
+  min-width: 40px;
+
+  div {
+    height: 50px;
+    //width: 150px;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 18px;
+  }
+
+}
