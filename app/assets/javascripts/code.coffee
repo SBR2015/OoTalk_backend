@@ -11,6 +11,13 @@
 abstractSyntaxLists = ->
   URL = "/api/v1/abstractsyntax/"
   LANG = "ja"
+  tree_code = {}
+#  ARGUMENTS = {
+#    "@left": "Left",
+#    "@right": "Right",
+#    "@middle": "Middle"
+#  }
+
   $ ->
     $.get(URL + LANG, null, (lists) =>
       abstract_syntax_lists = $("#abstract_syntax_lists")
@@ -18,11 +25,13 @@ abstractSyntaxLists = ->
       for l in lists
         line = $('<div></div>',
 #          id: l.id,
+#          id: "code",
           class: "ui-widget-content",
           class_name: l.class_name,
           string: l.string
         ).text(l.name)
-#        console.log(line)
+
+        # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
 
       # Drag初期化
@@ -35,7 +44,9 @@ abstractSyntaxLists = ->
         helper: "clone",
         start: (event, ui) ->
           console.log "start drag"
-          $(ui.helper).text($(ui.helper).attr('string'))
+          $(ui.helper).text($(ui.helper).attr('string')).css(
+            'width': '350px'
+          )
 
 #          offset = $(this).offset()
 #          xPos = offset.left
@@ -47,70 +58,72 @@ abstractSyntaxLists = ->
 
         stop: (event, ui) ->
           console.log "stop drag"
-#          $(ui.draggable).clone().appendTo(this)
-#          $(ui.draggable).remove()
-#          $(this).append($(ui.helper).clone())
-#          if $(ui.draggable).find('#abstract_syntax_lists div').length == 0
-#            $(this).draggable().append($(ui.helper).clone())
+
       })
 
       # Drop初期化
       $('#input_code').droppable({
         drop: (event, ui) ->
           console.log "drop"
-          $(ui.helper).text($(ui.helper).attr('string'))
           clone_dragged = $(ui.draggable).clone()
-          $(this).append(clone_dragged.text(clone_dragged.attr('string'))).removeClass()
+          clone_string = clone_dragged.attr('string')
+          this_string = if typeof clone_string isnt 'undefined' then clone_string else null
 
-#          console.log "this = " + clone_dragged.attr('string')
+          # もう既に子がいればbreak
+          return if this_string is null
+          clone_dragged.removeAttr('string').text('')
 
-#          $(hoge).text($(hoge).attr('string'))
-#          $(hoge).text($(ui.helper).attr('string'))
-#          $(ui.helper).disableSelection()
-#          $(this).attr('class_name')
-#          $(this).remove()
+          for s in this_string.split('\t')
+            child_line = $('<span></span>').text(s).attr('class_name', 'null')
+            if s.charAt(0) is "@"
+              $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2))
+              .css(
+                "height": "50px",
+                "width": "10px",
+                "padding": "0.5em",
+#                "text-align": "center",
+#                "font-size": "12px",
+#                "border": "1px solid black",
+                "background-color": "#d9534f",
+                "color": "#eee"
+              )
+            $(clone_dragged).append(child_line)
+          $(this).append(clone_dragged).removeClass()
+
       })
 
       # Sort初期化
       $('#input_code').sortable({
 #        grid: [20, 10]
-#        connectWith: ".connectedSortable"
+#        connectWith: "#code"
+#        greedy: true,
+#        handle: 'div',
+#        items: 'div',
+#        toleranceElement: '> div'#,
+#        tolerance: 'pointer',
+#        revert: 'invalid',
+#        placeholder: 'span2 well placeholder tile',
+#        forceHelperSize: true,
         stop: (event, ui) ->
           $('.ui-sortable-helper').remove()
+
       }).disableSelection()
-
-#      $("#abstract_syntax_lists div").live('dblclick', ->
-#        $(this).remove()
-#      )
-      # Drag開始の処理
-#      $('#abstract_syntax_lists div').on('dragstart', (event, ui) ->
-#        console.log "start drag"
-#        offset = $(this).offset()
-#        xPos = offset.left
-#        yPos = offset.top
-#        console.log "x = " + xPos + " y = " + yPos
-#        ui.clone.appendTo(this)
-#      )
-
-      # Drag中の処理
-#      $('#abstract_syntax_lists div').on('drag', (event, ui) ->
-#        console.log "while drag"
-#      )
-
-      # Drag終了の処理
-#      $('#abstract_syntax_lists div').on('dragstop', (event, ui) ->
-#        $(this).append($(ui.helper).clone())
-#      )
 
     )
 
 
+# submitボタンを押した時、tree構造のjsonを生成
 #createProgram = ->
 #  $ ->
-#    $('#abstract_syntax_lists').children().draggable()
-#    $('#Add').draggable()
-#    program = $('#input_code')
-#    program.append('ああああああ')
+    # プログラミングのjson生成
+    this_code = $('#input_code')
+#    this_class_name = .attr('class_name')
+#    this_string = $(ui.helper).attr('string').split('\t')
+
+#    tree_code[this_class_name] = this_string
+#    console.log "class name = " + this_class_name
+#    console.log "string = " + this_string
+#    console.log tree_code
 
 abstractSyntaxLists()
 #createProgram()
