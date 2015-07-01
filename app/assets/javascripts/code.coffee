@@ -76,7 +76,7 @@ abstractSyntaxLists = ->
 #        grid: [20, 10]
 #        connectWith: ".connectedSortable"
         stop: (event, ui) ->
-          $(ui.helper).remove()
+          $('.ui-sortable-helper').remove()
       }).disableSelection()
 
 #      $("#abstract_syntax_lists div").live('dblclick', ->
