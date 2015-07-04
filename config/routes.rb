@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :abstract_syntax, only: [:show], param: :language ,path: :abstractsyntax
+      resources :execute
       # match 'abstractsyntax', to: 'api/v1/abstract_syntax#index', via: 'get'
     end
   end
