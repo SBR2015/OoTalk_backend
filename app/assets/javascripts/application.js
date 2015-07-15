@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require ootalk.min.js
+//= require codemirror.js
+//= require mode/javascript/javascript.js
 //= require_tree .
