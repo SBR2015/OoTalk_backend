@@ -19,9 +19,9 @@ $ bundle exec rails s
 ---------------
 - [Yoshihide Chubachi](https://github.com/ychubachi):中鉢 欣秀
 
-Team members(スクラムマスターを週ごとの持ち回り制)
+Team members
 ---------------
-- [shinjukujohnny](https://github.com/shinjukujohnny):吉川久文
+- [shinjukujohnny](https://github.com/shinjukujohnny):吉川久文(スクラムマスター)
 
 - [Yusuke Ohashi](https://github.com/yuchan):大橋佑亮
 
