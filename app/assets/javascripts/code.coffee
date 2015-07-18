@@ -47,7 +47,6 @@ $ ->
       for s in this_string.split('\t')
         child_line = $('<span></span>').text(s).attr('class_name', 'null')
         if s.charAt(0) is "@"
-          child_line = $('<input>').attr('type', 'text')
           $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2)).css
             padding: "0.5em"
             "background-color": "#d9534f"
@@ -61,11 +60,6 @@ $ ->
                 ui.draggable.remove()
 
               if ui.draggable.attr("class_name") is "Constant"
-                line = $('<div></div>',
-                  class: "ui-widget-content"
-                  class_name:  ui.draggable.attr "class_name"
-                  string: ui.draggable.attr "string").text(l.name)
-
                 $consText = $("<textarea placeholder='@value'>").css
                   height: "25px"
                   width: "80px"
