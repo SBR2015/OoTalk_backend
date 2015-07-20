@@ -1,10 +1,11 @@
-<form id="code_execute" method="POST">
-  <div class="form-group">
-    <textarea id="json_code" name="code[src]" cols="80" rows="25" placeholder="コードを入力してください"></textarea>
-  </div>
-  <input type="submit" class="btn btn-info"/>
-</form>
-
-<div id="output_area">
-  <textarea id="output_code" cols="80" rows="5" placeholder="出力結果" readonly></textarea>
+<div class="col-md-12">
+  <form id="code_execute" method="POST">
+    <div class="form-group">
+      <textarea cols="80" id="json_code" name="code[src]" placeholder="コードを入力してください" rows="25"></textarea>
+    </div>
+    <%= render "layouts/partials/submit_button" %>
+  </form>
+</div>
+<div class="col-md-12">
+  <%= render "layouts/partials/output_code" %>
 </div>

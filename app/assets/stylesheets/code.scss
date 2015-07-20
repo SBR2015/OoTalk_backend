@@ -43,3 +43,25 @@
 #output_area {
   margin: 12px;
 }
+
+pre#output_code {
+  //outline: 1px solid #a11;
+  padding: 5px;
+  margin-top: 5px;
+
+  .string {
+    color: #a11;
+  }
+  .number {
+    color: #164;
+  }
+  .boolean {
+    color: #219;
+  }
+  .null {
+    color: #219;
+  }
+  .key {
+    color: #a11;
+  }
+}

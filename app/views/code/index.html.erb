@@ -1,17 +1,10 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="row">
-      <!--<textarea id="input_code" cols="80" rows="25" placeholder="コードを入力してください"></textarea>-->
-      <div id="input_code"></div>
-    </div>
-    <div class="row">
-      <input type="submit" class="btn btn-info"/>
-    </div>
-    <div class="row">
-      <textarea id="output_code" cols="80" rows="5" placeholder="出力結果" readonly disabled></textarea>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div id="abstract_syntax_lists"></div>
-  </div>
+<div class="col-md-8">
+  <form id="code_execute" method="POST">
+    <div id="input_code"></div>
+    <%= render 'layouts/partials/submit_button' %>
+  </form>
+  <%= render 'layouts/partials/output_code' %>
+</div>
+<div class="col-md-4">
+  <div id="abstract_syntax_lists"></div>
 </div>
