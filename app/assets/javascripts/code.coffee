@@ -3,7 +3,7 @@
 require 'ootalk'
 
 $ ->
-  # Drag初期化
+# Drag初期化
   enDraggable = (obj) ->
     obj.draggable
       appendTo: "body"
@@ -34,14 +34,16 @@ $ ->
           "background-color": "#d9534f"
           color: "#eee"
           display: "inline-block"
-#
-#        if ui.draggable.attr("class_name") is "Constant"
-#          $consInput = $("<input placeholder='@value'>").css
-#            height: "25px"
-#            width: "80px"
-#            color: "black"
-#          $(child_line).text('').append($consInput)
-#          return child_line
+
+        #コンスタントの処理
+        if ui.draggable.attr("class_name") is "Constant"
+          consInput = $("<input placeholder='@value'>").css
+            height: "25px"
+            width: "80px"
+            color: "black"
+          $(child_line).css(padding: "0px")
+          $(child_line).text('').append(consInput)
+#          child_line = consInput
 
         #各elemenの入れ子
         $(child_line).droppable
@@ -75,9 +77,9 @@ $ ->
 
     for l in lists
       line = $('<div></div>',
-      class: "ui-widget-content"
-      class_name: l.class_name
-      string: l.string).text(l.name)
+        class: "ui-widget-content"
+        class_name: l.class_name
+        string: l.string).text(l.name)
       # 使えるbuttonを追加
       abstract_syntax_lists.append(line)
 
