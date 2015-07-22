@@ -9,6 +9,7 @@ $ ->
       appendTo: "body"
       cursor: "move"
       helper: "clone"
+
       start: (event, ui) ->
         console.log "start drag"
       drag: (event, ui) ->
@@ -43,24 +44,23 @@ $ ->
             color: "black"
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
-#          child_line = consInput
 
-        #各elemenの入れ子
-        $(child_line).droppable
+         #各elemenの入れ子
+#        console.log $(child_line).parent().attr('class_name')
+#        console.log $(child_line).attr('class_name')
+        $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
+          #右サイドバーのボタンのみドロップ可
+          accept: ($element) ->
+            return true if $element.parent().attr('id') isnt 'input_code'
           hoverClass: "ui-state-hover"
           drop: (event, ui) ->
+#            console.log $(this).parent().attr('class_name')
+#            console.log $(this).attr('class_name')
             $(this).text('')
             $("#input_code").droppable('enable')
             $(this).droppable('disable')
-            if ui.draggable.parent().attr('id') is "input_code"
-              #ここはまだうまく動いていない。。。
-#              $(this).append(ui.draggable)
-#              ui.draggable.remove()
-              #なので一応ドロップしないようにする
-              $(this).droppable('disable')
-            else
-              #recursion
-              $(this).append(clone_dragged(ui))
+            $(this).append(clone_dragged(ui))
+          #２度ドロップを防ぐ
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
@@ -83,7 +83,7 @@ $ ->
       # 使えるbuttonを追加
       abstract_syntax_lists.append(line)
 
-    enDraggable $('#abstract_syntax_lists div')
+#    enDraggable $('#abstract_syntax_lists div')
 
   # Drop初期化
   $('#input_code').droppable
