@@ -64,7 +64,7 @@ $ ->
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
-        enDraggable $(child_line)
+#        enDraggable $(child_line)
 
       $(clone_drag).append(child_line)
     return clone_drag
@@ -83,7 +83,7 @@ $ ->
       # 使えるbuttonを追加
       abstract_syntax_lists.append(line)
 
-#    enDraggable $('#abstract_syntax_lists div')
+    enDraggable $('#abstract_syntax_lists div')
 
   # Drop初期化
   $('#input_code').droppable
