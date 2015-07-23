@@ -51,7 +51,7 @@ $ ->
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
           #右サイドバーのボタンのみドロップ可
           accept: ($element) ->
-            return true if $element.parent().attr('id') isnt 'input_code'
+            return true if $element.parent().attr('id') is 'abstract_syntax_lists'
           hoverClass: "ui-state-hover"
           drop: (event, ui) ->
 #            console.log $(this).parent().attr('class_name')
@@ -59,12 +59,13 @@ $ ->
             $(this).text('')
             $("#input_code").droppable('enable')
             $(this).droppable('disable')
+            $(this).css(padding: 0)
             $(this).append(clone_dragged(ui))
           #２度ドロップを防ぐ
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
-#        enDraggable $(child_line)
+        enDraggable $(child_line)
 
       $(clone_drag).append(child_line)
     return clone_drag
@@ -77,7 +78,7 @@ $ ->
 
     for l in lists
       line = $('<div></div>',
-        class: "ui-widget-content"
+        class: "ui-widget-content" + " " + l.class_name
         class_name: l.class_name
         string: l.string).text(l.name)
       # 使えるbuttonを追加
