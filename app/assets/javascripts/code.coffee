@@ -61,7 +61,7 @@ $ ->
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
-        enDraggable $(child_line)
+#        enDraggable $(child_line)
 
       $(clone_drag).append(child_line)
     return clone_drag
@@ -93,7 +93,24 @@ $ ->
       $('.ui-sortable-helper').remove()
   .disableSelection()
 
-#reset button
+  #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+
+  #ゴミ箱
+  $('#trash-bin').droppable
+    accept: ($element) ->
+      return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
+    hoverClass: ->
+      $(this).css
+        width: "300px"
+    out: (event, ui)->
+      $(this).css
+        width: "30px"
+    drop: (event, ui) ->
+      $(this).animate
+        width: "30px"
+      $(ui.draggable).remove()
+
+
 

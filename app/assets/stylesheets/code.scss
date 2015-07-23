@@ -38,6 +38,7 @@
   pre#output_code {
     padding: 5px;
     margin-top: 5px;
+    height: 100px;
 
     .string {
       color: #a11;
@@ -55,4 +56,25 @@
       color: #a11;
     }
   }
+
+ #trash-bin {
+   width: 30px;
+   height: 400px;
+   background-color: lightpink;
+   padding: 40px 10px;
+   color: white;
+   font-size: 14px;
+   text-align: center;
+   font-weight: bold;
+   letter-spacing: 10px;
+   //vertical-align: middle
+   top: 0;
+   right: 0;
+   word-wrap: break-word;
+   text-transform: uppercase;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   position: absolute;
+  }
+
 
