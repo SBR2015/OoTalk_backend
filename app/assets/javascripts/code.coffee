@@ -46,16 +46,12 @@ $ ->
           $(child_line).text('').append(consInput)
 
          #各elemenの入れ子
-#        console.log $(child_line).parent().attr('class_name')
-#        console.log $(child_line).attr('class_name')
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
           #右サイドバーのボタンのみドロップ可
           accept: ($element) ->
             return true if $element.parent().attr('id') is 'abstract_syntax_lists'
           hoverClass: "ui-state-hover"
           drop: (event, ui) ->
-#            console.log $(this).parent().attr('class_name')
-#            console.log $(this).attr('class_name')
             $(this).text('')
             $("#input_code").droppable('enable')
             $(this).droppable('disable')
