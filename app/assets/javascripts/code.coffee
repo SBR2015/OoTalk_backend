@@ -40,7 +40,9 @@ $ ->
           consInput = $("<input placeholder='@value'>").css
             height: "25px"
             width: "80px"
-            color: "black"
+            "background-color": "lightpink"
+            color: "white"
+
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
 
