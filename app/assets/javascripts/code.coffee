@@ -31,8 +31,8 @@ $ ->
       if s.charAt(0) is "@"
         $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2)).css
           padding: "0.5em"
-          "background-color": "#d9534f"
-          color: "#eee"
+          "background-color": "lightpink"
+          color: "white"
           display: "inline-block"
 
         #コンスタントの処理
