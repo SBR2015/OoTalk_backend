@@ -2,66 +2,86 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#abstract_syntax_lists div {
-  height: 50px;
-  width: 150px;
-  padding: 0.5em;
-  //border: 2px solid #EB974E;
-  //background-color: #EB974E;
-  //color: #ECF0F1;
-  //border-radius: 4px;
-  //box-shadow: inset 0 0 1px #D35400;
-  text-align: center;
-  font-size: 18px;
-//  display: table-cell;
-//  vertical-align: middle;
-//  margin-bottom: 10px;
-}
-
-#input_code {
-  border: 1px solid black;
-  min-height: 400px;
-  min-width: 40px;
+#abstract_syntax_lists {
+  height: 400px;
+  width: 210px;
+  overflow-y: scroll;
+  border: 2px solid #aaaaaa;
 
   div {
-    //height: 50px;
-    //width: 150px;
+    height: 50px;
+    width: 200px;
     padding: 0.5em;
     text-align: center;
     font-size: 18px;
-  }
-
-  //.ui-sortable-placeholder {
-  //  border: 1px solid green;
-  //  background-color: white;
-  //  -webkit-box-shadow: 0px 0px 10px #888;
-  //  -moz-box-shadow: 0px 0px 10px #888;
-  //  box-shadow: 0px 0px 10px #888;
-  //}
-}
-
-#output_area {
-  margin: 12px;
-}
-
-pre#output_code {
-  //outline: 1px solid #a11;
-  padding: 5px;
-  margin-top: 5px;
-
-  .string {
-    color: #a11;
-  }
-  .number {
-    color: #164;
-  }
-  .boolean {
-    color: #219;
-  }
-  .null {
-    color: #219;
-  }
-  .key {
-    color: #a11;
+    cursor: move;
   }
 }
+
+  #input_code {
+    border: 2px solid #aaaaaa;
+    min-height: 400px;
+    min-width: 40px;
+
+    div {
+      padding: 0.5em;
+      text-align: center;
+      font-size: 18px;
+      border-width: 2px;
+      border-color: gainsboro;
+      cursor: move;
+    }
+  }
+
+  #output_area {
+    margin: 12px;
+  }
+
+  pre#output_code {
+    padding: 5px;
+    margin-top: 5px;
+    height: 100px;
+
+    .string {
+      color: #a11;
+    }
+    .number {
+      color: #164;
+    }
+    .boolean {
+      color: #219;
+    }
+    .null {
+      color: #219;
+    }
+    .key {
+      color: #a11;
+    }
+  }
+
+ #trash-bin {
+   width: 30px;
+   height: 400px;
+   background-color: darkseagreen;
+   padding: 60px 10px;
+   color: white;
+   font-size: 14px;
+   text-align: center;
+   font-weight: bold;
+   letter-spacing: 10px;
+   //vertical-align: middle
+   top: 0;
+   right: 0;
+   word-wrap: break-word;
+   text-transform: uppercase;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   position: absolute;
+
+   img {
+     margin-top: 40px;
+     max-height: 200px;
+   }
+  }
+
+
