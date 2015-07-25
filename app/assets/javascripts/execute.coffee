@@ -15,19 +15,18 @@ $ ->
       return '<span class="' + cls + '">' + match + '</span>'
 
 
-  myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
-    mode:
-      name:"javascript"
-      json:true
-    lineNumbers: true
-    tabSize: 2
+  if $("#json_code").length == 1
+    myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
+      mode:
+        name:"javascript"
+        json:true
+      lineNumbers: true
+      tabSize: 2
 
   $('#code_execute').submit (event) ->
     event.preventDefault()
 
     doc = myCodeMirror.getDoc()
-    console.log doc.getValue()
-
     $('#output_code').text ""
     o = {}
     o["code[src]"] = doc.getValue()
@@ -40,3 +39,21 @@ $ ->
         $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
       error: (XMLHttpRequest, textStatus, errorThrown) ->
         alert(textStatus);
+
+  $('#ast_code_execute').submit (event) ->
+    event.preventDefault()
+
+    $('#output_code').text ""
+    o = {}
+    o["code[src]"] = ""
+    $.ajax '/api/v1/execute',
+      type:'POST'
+      dataType:'json'
+      data : o
+      timeout: 10000
+      success: (data) ->
+        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
+      error: (XMLHttpRequest, textStatus, errorThrown) ->
+        alert(textStatus);
+
+  return
