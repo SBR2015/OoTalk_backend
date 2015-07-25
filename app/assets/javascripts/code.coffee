@@ -7,7 +7,6 @@ $ ->
   enDraggable = (obj) ->
     obj.draggable
       appendTo: "body"
-      cursor: "move"
       helper: "clone"
 
       start: (event, ui) ->
@@ -99,11 +98,13 @@ $ ->
 
   #ゴミ箱
   $('#trash-bin').droppable
+    tolerance: "pointer"
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
     hoverClass: ->
       $(this).css
         width: "300px"
+      $(this).append()
     out: (event, ui)->
       $(this).css
         width: "30px"
