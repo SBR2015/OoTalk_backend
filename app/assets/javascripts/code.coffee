@@ -115,7 +115,7 @@ $ ->
     $('#input_code').empty()
 
   #ゴミ箱
-  $('#trash-bin').droppable
+  $('#trash-can').droppable
     tolerance: "pointer"
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
