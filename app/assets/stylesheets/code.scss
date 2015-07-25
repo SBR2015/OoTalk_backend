@@ -77,9 +77,11 @@
    border: 1px solid transparent;
    border-radius: 4px;
    position: absolute;
+
+   img {
+     margin-top: 40px;
+     max-height: 200px;
+   }
   }
 
-img {
-  margin-top: 40px;
-  max-height: 200px;
-}
+
