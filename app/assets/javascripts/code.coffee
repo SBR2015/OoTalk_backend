@@ -3,7 +3,19 @@
 require 'ootalk'
 
 $ ->
-# Drag初期化
+  getParameterByName = (name) ->
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
+    regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
+    #url取得
+    results = regex.exec(location.search)
+
+    if results is null
+    # default japanese
+      "ja"
+    else
+      decodeURIComponent(results[1].replace(/\+/g, " "))
+
+  # Drag初期化
   enDraggable = (obj) ->
     obj.draggable
       appendTo: "body"
@@ -65,8 +77,10 @@ $ ->
       $(clone_drag).append(child_line)
     return clone_drag
 
+  lang = getParameterByName "lang"
+  console.log lang
   URL = "/api/v1/abstractsyntax/"
-  LANG = "ja"
+  LANG = lang
   tree_code = {}
   $.get URL + LANG, null, (lists) =>
     abstract_syntax_lists = $("#abstract_syntax_lists")
@@ -112,6 +126,3 @@ $ ->
       $(this).animate
         width: "30px"
       $(ui.draggable).remove()
-
-
-
