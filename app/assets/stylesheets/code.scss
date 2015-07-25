@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.navbar-brand img {
+  max-height: 50px;
+  margin-top: -15px;
+}
+
 #abstract_syntax_lists {
   height: 400px;
   width: 210px;
@@ -28,10 +33,12 @@
       text-align: center;
       font-size: 18px;
       border-width: 2px;
-      border-color: gainsboro;
+      border-color: #aaaaaa;
       cursor: move;
     }
-  }
+
+    background: image_url("ootalk_background.png") no-repeat 30px;
+ }
 
   #output_area {
     margin: 12px;
@@ -83,5 +90,9 @@
      max-height: 200px;
    }
   }
+
+::-webkit-input-placeholder {
+  color: white;
+}
 
 
