@@ -46,19 +46,16 @@ $ ->
           $(child_line).text('').append(consInput)
 
          #各elemenの入れ子
-#        console.log $(child_line).parent().attr('class_name')
-#        console.log $(child_line).attr('class_name')
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
           #右サイドバーのボタンのみドロップ可
           accept: ($element) ->
-            return true if $element.parent().attr('id') isnt 'input_code'
+            return true if $element.parent().attr('id') is 'abstract_syntax_lists'
           hoverClass: "ui-state-hover"
           drop: (event, ui) ->
-#            console.log $(this).parent().attr('class_name')
-#            console.log $(this).attr('class_name')
             $(this).text('')
             $("#input_code").droppable('enable')
             $(this).droppable('disable')
+            $(this).css(padding: 0)
             $(this).append(clone_dragged(ui))
           #２度ドロップを防ぐ
           over: (event, ui) ->
@@ -77,7 +74,7 @@ $ ->
 
     for l in lists
       line = $('<div></div>',
-        class: "ui-widget-content"
+        class: "ui-widget-content" + " " + l.class_name
         class_name: l.class_name
         string: l.string).text(l.name)
       # 使えるbuttonを追加
@@ -96,7 +93,24 @@ $ ->
       $('.ui-sortable-helper').remove()
   .disableSelection()
 
-#reset button
+  #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+
+  #ゴミ箱
+  $('#trash-bin').droppable
+    accept: ($element) ->
+      return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
+    hoverClass: ->
+      $(this).css
+        width: "300px"
+    out: (event, ui)->
+      $(this).css
+        width: "30px"
+    drop: (event, ui) ->
+      $(this).animate
+        width: "30px"
+      $(ui.draggable).remove()
+
+
 
