@@ -3,7 +3,19 @@
 require 'ootalk'
 
 $ ->
-# Drag初期化
+  getParameterByName = (name) ->
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
+    regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
+    #url取得
+    results = regex.exec(location.search)
+
+    if results is null
+    # default japanese
+      "ja"
+    else
+      decodeURIComponent(results[1].replace(/\+/g, " "))
+
+  # Drag初期化
   enDraggable = (obj) ->
     obj.draggable
       appendTo: "body"
@@ -40,12 +52,15 @@ $ ->
           consInput = $("<input placeholder='@value'>").css
             height: "25px"
             width: "80px"
-            color: "black"
+            "background-color": "lightpink"
+            color: "white"
+
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
 
          #各elemenの入れ子
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
+          tolerance: "pointer"
           #右サイドバーのボタンのみドロップ可
           accept: ($element) ->
             return true if $element.parent().attr('id') is 'abstract_syntax_lists'
@@ -65,8 +80,10 @@ $ ->
       $(clone_drag).append(child_line)
     return clone_drag
 
+  lang = getParameterByName "lang"
+  console.log lang
   URL = "/api/v1/abstractsyntax/"
-  LANG = "ja"
+  LANG = lang
   tree_code = {}
   $.get URL + LANG, null, (lists) =>
     abstract_syntax_lists = $("#abstract_syntax_lists")
@@ -83,6 +100,7 @@ $ ->
 
   # Drop初期化
   $('#input_code').droppable
+    tolerance: "pointer"
     drop: (event, ui) ->
       $(this).append(clone_dragged (ui))
 
@@ -112,6 +130,3 @@ $ ->
       $(this).animate
         width: "30px"
       $(ui.draggable).remove()
-
-
-
