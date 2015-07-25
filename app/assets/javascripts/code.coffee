@@ -7,7 +7,6 @@ $ ->
   enDraggable = (obj) ->
     obj.draggable
       appendTo: "body"
-      cursor: "move"
       helper: "clone"
 
       start: (event, ui) ->
@@ -32,8 +31,8 @@ $ ->
       if s.charAt(0) is "@"
         $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2)).css
           padding: "0.5em"
-          "background-color": "#d9534f"
-          color: "#eee"
+          "background-color": "lightpink"
+          color: "white"
           display: "inline-block"
 
         #コンスタントの処理
@@ -99,11 +98,13 @@ $ ->
 
   #ゴミ箱
   $('#trash-bin').droppable
+    tolerance: "pointer"
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
     hoverClass: ->
       $(this).css
         width: "300px"
+      $(this).append()
     out: (event, ui)->
       $(this).css
         width: "30px"
