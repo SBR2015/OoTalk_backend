@@ -46,6 +46,7 @@ $ ->
 
          #各elemenの入れ子
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
+          tolerance: "pointer"
           #右サイドバーのボタンのみドロップ可
           accept: ($element) ->
             return true if $element.parent().attr('id') is 'abstract_syntax_lists'
@@ -83,6 +84,7 @@ $ ->
 
   # Drop初期化
   $('#input_code').droppable
+    tolerance: "pointer"
     drop: (event, ui) ->
       $(this).append(clone_dragged (ui))
 
