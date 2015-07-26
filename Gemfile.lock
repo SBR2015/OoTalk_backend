@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: 8a57b53a58917d5c9c232c4ccea52f474680bcfc
+  revision: b7ca2575d9860bcbde6ae8a8db8640e669113bdf
   specs:
     ootalk (0.3.0)
 
@@ -297,3 +297,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.4
