@@ -11,7 +11,7 @@
   height: 400px;
   width: 210px;
   overflow-y: scroll;
-  border: 2px solid #aaaaaa;
+  border: 1px solid #aaaaaa;
 
   div {
     height: 50px;
@@ -24,9 +24,10 @@
 }
 
   #input_code {
-    border: 2px solid #aaaaaa;
+    border: 1px solid #aaaaaa;
     min-height: 400px;
     min-width: 40px;
+    margin-bottom: 5px;
 
     div {
       padding: 0.5em;
@@ -37,7 +38,7 @@
       cursor: move;
     }
 
-    background: image_url("ootalk_background.png") no-repeat 30px;
+    background: image_url("ootalk_background.png") no-repeat 10px 30px;
  }
 
   #output_area {
@@ -46,7 +47,7 @@
 
   pre#output_code {
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     height: 100px;
 
     .string {
@@ -66,7 +67,7 @@
     }
   }
 
- #trash-bin {
+ #trash-can {
    width: 30px;
    height: 400px;
    background-color: darkseagreen;
@@ -95,4 +96,17 @@
   color: white;
 }
 
+.CodeMirror {
+  border: 1px solid #aaaaaa;
+  height: 400px;
+  background: image_url("ootalk_background.png") no-repeat 10px 30px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
 

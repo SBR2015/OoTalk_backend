@@ -1,8 +1,9 @@
 # Author: Linh, Ounenhei, yuchan, Tsukasa Arima, Olivia
 
-require 'ootalk'
+ootalk = require 'ootalk'
 
 $ ->
+  syntaxList = []
   getParameterByName = (name) ->
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
     regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
@@ -10,10 +11,35 @@ $ ->
     results = regex.exec(location.search)
 
     if results is null
-    # default japanese
-      "ja"
+      null
     else
       decodeURIComponent(results[1].replace(/\+/g, " "))
+
+  syntaxHighlight = (json) ->
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) ->
+      cls = 'number'
+      if /^"/.test match
+        if /:$/.test match
+          cls = 'key'
+        else
+          cls = 'string'
+      else if /true|false/.test match
+        cls = 'boolean'
+      else if /null/.test match
+        cls = 'null'
+      return '<span class="' + cls + '">' + match + '</span>'
+
+  executeRequest = (params) ->
+    $.ajax '/api/v1/execute',
+      type:'POST'
+      dataType:'json'
+      data : params
+      timeout: 10000
+      success: (data) ->
+        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
+      error: (XMLHttpRequest, textStatus, errorThrown) ->
+        alert(textStatus)
 
   # Drag初期化
   enDraggable = (obj) ->
@@ -58,7 +84,7 @@ $ ->
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
 
-         #各elemenの入れ子
+          #各elemenの入れ子
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
           tolerance: "pointer"
           #右サイドバーのボタンのみドロップ可
@@ -75,28 +101,76 @@ $ ->
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
-#        enDraggable $(child_line)
-
       $(clone_drag).append(child_line)
     return clone_drag
 
+  initializeSyntaxList = (lang) ->
+    URL = "/api/v1/abstractsyntax/"
+    LANG = lang ? "ja"
+    tree_code = {}
+    $.get URL + LANG, null, (lists) =>
+      abstract_syntax_lists = $("#abstract_syntax_lists")
+      syntaxList = lists
+      for l in lists
+        line = $('<div></div>',
+          class: "ui-widget-content" + " " + l.class_name
+          class_name: l.class_name
+          string: l.string).text(l.name)
+        # 使えるbuttonを追加
+        abstract_syntax_lists.append(line)
+
+      enDraggable $('#abstract_syntax_lists div')
+
+  createNode = (childnode, className, operand) ->
+    hasClass = false
+    if className is null
+      return null
+
+    if operand is 'Left' or operand is 'Right'
+      hasClass = true
+    else
+      for list in syntaxList
+        if list.class_name is className
+          hasClass = true
+          break
+
+    if hasClass
+      leftValue = null
+      rightValue = null
+      if $(childnode).attr("class_name") == 'Constant'
+        if operand is 'Left'
+          leftValue =  parseInt($($(childnode).find("input")[0]).val())
+        else if operand is 'Right'
+          leftValue = parseInt($($(childnode).find("input")[0]).val())
+      else
+        for n in $(childnode).children()
+          if $(n).attr("class_name") is 'Left'
+            for _n in $(n).children()
+              leftValue = createNode(_n, $(_n).attr("class_name"), 'Left')
+          else if $(n).attr("class_name") is 'Right'
+            for _n in $(n).children()
+              rightValue = createNode(_n, $(_n).attr("class_name"), 'Right')
+
+      node = ootalk.newNode(className, leftValue, rightValue)
+      return node
+
+    return null
+
+  createTreeNode = (parent, parentnodeid) ->
+    children = parent.children()
+    node = null
+    for childnode in children
+      className = $(childnode).attr "class_name"
+      node = createNode childnode, className
+      if node
+        if parent.attr('id') is 'input_code'
+          ootalk.append(node)
+        createTreeNode($(childnode), node.nodeid);
+      else
+        createTreeNode($(childnode));
+
   lang = getParameterByName "lang"
-  console.log lang
-  URL = "/api/v1/abstractsyntax/"
-  LANG = lang
-  tree_code = {}
-  $.get URL + LANG, null, (lists) =>
-    abstract_syntax_lists = $("#abstract_syntax_lists")
-
-    for l in lists
-      line = $('<div></div>',
-        class: "ui-widget-content" + " " + l.class_name
-        class_name: l.class_name
-        string: l.string).text(l.name)
-      # 使えるbuttonを追加
-      abstract_syntax_lists.append(line)
-
-    enDraggable $('#abstract_syntax_lists div')
+  initializeSyntaxList(lang)
 
   # Drop初期化
   $('#input_code').droppable
@@ -115,7 +189,7 @@ $ ->
     $('#input_code').empty()
 
   #ゴミ箱
-  $('#trash-bin').droppable
+  $('#trash-can').droppable
     tolerance: "pointer"
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
@@ -130,3 +204,39 @@ $ ->
       $(this).animate
         width: "30px"
       $(ui.draggable).remove()
+
+  if $("#json_code").length == 1
+    myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
+      mode:
+        name:"javascript"
+        json:true
+      lineNumbers: true
+      tabSize: 2
+
+  $('#code_execute').submit (event) ->
+    event.preventDefault()
+    $('#output_code').text ""
+
+    doc = myCodeMirror.getDoc()
+    o = {}
+    o["code[src]"] = doc.getValue()
+    executeRequest(o)
+
+
+  $('#ast_code_execute').submit (event) ->
+    event.preventDefault()
+    trees = []
+    ootalk.init()
+    createTreeNode($("#input_code"))
+    console.log ootalk.tree()
+    for elem in ootalk.tree()
+      trees.push {"Program": elem}
+
+    console.log JSON.stringify trees
+    $('#output_code').text ""
+
+    o = {}
+    o["code[src]"] = JSON.stringify trees
+    executeRequest(o)
+
+  return
