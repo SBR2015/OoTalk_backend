@@ -139,9 +139,9 @@ $ ->
       rightValue = null
       if $(childnode).attr("class_name") == 'Constant'
         if operand is 'Left'
-          leftValue =  parseInt($($($(childnode).find("[class_name='Value']")[0]).find("input")[0]).val())
+          leftValue =  parseInt($($(childnode).find("input")[0]).val())
         else if operand is 'Right'
-          leftValue = parseInt($($($(childnode).find("[class_name='Value']")[0]).find("input")[0]).val())
+          leftValue = parseInt($($(childnode).find("input")[0]).val())
       else
         for n in $(childnode).children()
           if $(n).attr("class_name") is 'Left'
