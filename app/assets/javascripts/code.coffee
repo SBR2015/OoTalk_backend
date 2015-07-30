@@ -206,10 +206,7 @@ $ ->
       $(ui.draggable).remove()
       $("#trash-o").hide()
       $("#trash-c").fadeIn()
-      $(this).animate
-        speed: "slow"
-        width: "30px"
-
+      $(this).animate({width: "30px"}, 1000)
 
   if $("#json_code").length == 1
     myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
