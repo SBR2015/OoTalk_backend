@@ -194,6 +194,8 @@ $ ->
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
     hoverClass: ->
+      $("#trash-o").fadeIn()
+      $("#trash-c").hide()
       $(this).css
         width: "300px"
       $(this).append()
@@ -201,9 +203,13 @@ $ ->
       $(this).css
         width: "30px"
     drop: (event, ui) ->
-      $(this).animate
-        width: "30px"
       $(ui.draggable).remove()
+      $("#trash-o").hide()
+      $("#trash-c").fadeIn()
+      $(this).animate
+        speed: "slow"
+        width: "30px"
+
 
   if $("#json_code").length == 1
     myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
