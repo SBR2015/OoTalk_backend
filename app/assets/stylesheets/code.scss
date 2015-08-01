@@ -86,11 +86,17 @@
    border-radius: 4px;
    position: absolute;
 
-   img {
+   #trash-c {
+     display:none;
      margin-top: 40px;
      max-height: 200px;
    }
-  }
+   #trash-o {
+     display:inline;
+     margin-top: 40px;
+     max-height: 200px;
+   }
+ }
 
 ::-webkit-input-placeholder {
   color: white;

@@ -74,12 +74,16 @@ $ ->
           display: "inline-block"
 
         #コンスタントの処理
-        if ui.draggable.attr("class_name") is "Constant"
+        if (ui.draggable.attr("class_name") is "Constant") or (ui.draggable.attr("class_name") is "Variable")
           consInput = $("<input placeholder='@value'>").css
             height: "25px"
-            width: "80px"
+            width: "70px"
             "background-color": "lightpink"
             color: "white"
+          consInput.focus ->
+            $(this).css
+              "background-color": "#f5f5f5"
+              color: "black"
 
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
@@ -137,7 +141,7 @@ $ ->
     if hasClass
       leftValue = null
       rightValue = null
-      if $(childnode).attr("class_name") == 'Constant'
+      if ($(childnode).attr("class_name")) is 'Constant'
         if operand is 'Left'
           leftValue =  parseInt($($(childnode).find("input")[0]).val())
         else if operand is 'Right'
@@ -194,6 +198,8 @@ $ ->
     accept: ($element) ->
       return true if $element.parent().attr('id') isnt 'abstract_syntax_lists'
     hoverClass: ->
+      $("#trash-o").fadeIn()
+      $("#trash-c").hide()
       $(this).css
         width: "300px"
       $(this).append()
@@ -201,9 +207,10 @@ $ ->
       $(this).css
         width: "30px"
     drop: (event, ui) ->
-      $(this).animate
-        width: "30px"
       $(ui.draggable).remove()
+      $("#trash-o").hide()
+      $("#trash-c").fadeIn()
+      $(this).animate({width: "30px"}, 1000)
 
   if $("#json_code").length == 1
     myCodeMirror = CodeMirror.fromTextArea $("#json_code")[0],
