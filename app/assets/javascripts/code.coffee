@@ -74,10 +74,10 @@ $ ->
           display: "inline-block"
 
         #コンスタントの処理
-        if ui.draggable.attr("class_name") is "Constant"
+        if (ui.draggable.attr("class_name") is "Constant") or (ui.draggable.attr("class_name") is "Variable")
           consInput = $("<input placeholder='@value'>").css
             height: "25px"
-            width: "80px"
+            width: "70px"
             "background-color": "lightpink"
             color: "white"
           consInput.focus ->
@@ -141,7 +141,7 @@ $ ->
     if hasClass
       leftValue = null
       rightValue = null
-      if $(childnode).attr("class_name") == 'Constant'
+      if ($(childnode).attr("class_name")) is 'Constant'
         if operand is 'Left'
           leftValue =  parseInt($($(childnode).find("input")[0]).val())
         else if operand is 'Right'
