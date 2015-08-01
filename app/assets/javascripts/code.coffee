@@ -80,6 +80,10 @@ $ ->
             width: "80px"
             "background-color": "lightpink"
             color: "white"
+          consInput.focus ->
+            $(this).css
+              "background-color": "#f5f5f5"
+              color: "black"
 
           $(child_line).css(padding: "0px")
           $(child_line).text('').append(consInput)
