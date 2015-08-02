@@ -146,6 +146,11 @@ $ ->
           leftValue =  parseInt($($(childnode).find("input")[0]).val())
         else if operand is 'Right'
           leftValue = parseInt($($(childnode).find("input")[0]).val())
+      else if ($(childnode).attr("class_name")) is 'Variable'
+        if operand is 'Left'
+          leftValue =  $($(childnode).find("input")[0]).val()
+        else if operand is 'Right'
+          leftValue = $($(childnode).find("input")[0]).val()
       else
         for n in $(childnode).children()
           if $(n).attr("class_name") is 'Left'
