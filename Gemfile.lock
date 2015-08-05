@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: b7ca2575d9860bcbde6ae8a8db8640e669113bdf
+  revision: b94ae3b228970ec77c426a0d5a82b325a6a83c2b
   specs:
     ootalk (0.3.0)
 
@@ -42,7 +42,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    arel (6.0.2)
+    arel (6.0.3)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -81,9 +81,9 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.10)
     formatador (0.2.5)
-    globalid (0.3.5)
+    globalid (0.3.6)
       activesupport (>= 4.1.0)
-    guard (2.12.9)
+    guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
       lumberjack (~> 1.0)
@@ -97,7 +97,7 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.8)
       multi_json (~> 1.8)
-    guard-rspec (4.6.3)
+    guard-rspec (4.6.4)
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
@@ -130,7 +130,7 @@ GEM
     newrelic_rpm (3.12.1.298)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    notiffany (0.0.6)
+    notiffany (0.0.7)
       nenv (~> 0.1)
       shellany (~> 0.0)
     pg (0.18.2)
@@ -297,3 +297,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.4
