@@ -185,7 +185,6 @@ $ ->
   $('#input_code').sortable
     stop: (event, ui) ->
       $('.ui-sortable-helper').remove()
-  .disableSelection()
 
   #reset button
   $("input[type ='reset']").click ->
