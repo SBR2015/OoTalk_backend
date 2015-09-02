@@ -142,10 +142,9 @@ $ ->
       leftValue = null
       rightValue = null
       if ($(childnode).attr("class_name")) is 'Constant'
-        if operand is 'Left'
-          leftValue =  parseInt($($(childnode).find("input")[0]).val())
-        else if operand is 'Right'
-          leftValue = parseInt($($(childnode).find("input")[0]).val())
+        leftValue = parseInt($($(childnode).find("input")[0]).val())
+      else if ($(childnode).attr("class_name")) is 'Variable'
+        leftValue = $($(childnode).find("input")[0]).val()
       else
         for n in $(childnode).children()
           if $(n).attr("class_name") is 'Left'
@@ -186,7 +185,6 @@ $ ->
   $('#input_code').sortable
     stop: (event, ui) ->
       $('.ui-sortable-helper').remove()
-  .disableSelection()
 
   #reset button
   $("input[type ='reset']").click ->
