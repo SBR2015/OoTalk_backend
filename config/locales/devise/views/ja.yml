@@ -1,0 +1,30 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+ja:
+  devise:
+    confirmations:
+    mailer:
+    passwords:
+      forgot: "パスワードを忘れましたか?"
+      email: "メールアドレス"
+      send: "パスワードをリセットする"
+    registrations:
+      sign_up: "アカウントを作成"
+      edit_profile: "プロフィールの編集"
+      nickname: "ユーザー名"
+      email: "メールアドレス"
+      password: "パスワード"
+      current_password: "現在のパスワード"
+      min_password_length: "文字以上"
+      confirmation: "もう一度入力してください"
+      update: "更新"
+      cancel: "アカウントの削除"
+      back: "前のページ"
+    sessions:
+      sign_in: "サインイン"
+      nickname_or_email: "ユーザー名もしくはメールアドレス"
+      password: "パスワード"
+      remember: "保存"
+    shared:
+    unlocks:
+    sign_out: "サインアウト"
