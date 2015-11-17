@@ -37,7 +37,11 @@ $ ->
       data : params
       timeout: 10000
       success: (data) ->
-        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
+        console.log data
+        # $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
+        for d in data
+          line_text = 'exec: ' + d['exec'] + ' -> result: ' + d['result'] + ''
+          $('#output_code').append('<div>' + line_text + '</div>')
       error: (XMLHttpRequest, textStatus, errorThrown) ->
         alert(textStatus)
 
