@@ -1,0 +1,30 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+    mailer:
+    passwords:
+      forgot: "Forgot your password?"
+      email: "Email"
+      send: "Send me reset password instrution"
+    registrations:
+      sign_up: "Create Account"
+      edit_profile: "Edit Profile"
+      nickname: "username"
+      email: "Your Email Address"
+      password: "Create a Password"
+      current_password: "Current Password"
+      min_password_length: " characters minimum"
+      confirmation: "confirmation"
+      update: "Update"
+      cancel: "Cancel my account"
+      back: "Back"
+    sessions:
+      sign_in: "Sign in"
+      nickname_or_email: "Username or Email"
+      password: "Password"
+      remember: "Remember me"
+    shared:
+    unlocks:
+    sign_out: "Sign out"
