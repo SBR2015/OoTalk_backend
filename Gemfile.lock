@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: d033dd850a67c6d59c9ff7a98a8b2871d6f44fe1
+  revision: 5d8b278448b8556faa0f0e05aa33846be17b488b
   specs:
     ootalk (0.3.0)
 
@@ -137,7 +137,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.2)
+    minitest (5.8.3)
     multi_json (1.11.2)
     nenv (0.2.0)
     newrelic_rpm (3.14.0.305)
@@ -268,7 +268,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode-display_width (0.1.1)
-    unicorn (5.0.0)
+    unicorn (5.0.1)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
