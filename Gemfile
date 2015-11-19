@@ -79,6 +79,9 @@ group :development do
   gem 'hirb'
   gem 'hirb-unicode'
 
+  # chrome addon
+  gem 'meta_request'
+  
   # generate ER
   gem 'rails-erd'
 
@@ -107,7 +110,7 @@ gem 'ootalk', :git => 'https://github.com/SBR2015/OoTalk.git'
 # gem 'foreigner'
 
 # login settings
-# gem 'devise'
+gem 'devise'
 # gem 'devise-i18n'
 # gem 'omniauth'
 # gem 'omniauth-facebook'

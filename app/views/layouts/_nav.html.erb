@@ -28,6 +28,19 @@
             <li><a href="/?lang=vi">Tiếng Việt</a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% if user_signed_in? %>
+            <!-- <%= current_user.email if user_signed_in? %> -->
+              <li><%= link_to t('devise.registrations.edit_profile'), edit_user_registration_path %></li>
+              <li><%= link_to t('devise.sign_out'), destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to t('devise.registrations.sign_up'), new_user_registration_path %></li>
+              <li><%= link_to t('devise.sessions.sign_in'), new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
