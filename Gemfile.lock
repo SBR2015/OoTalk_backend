@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: 708a1220d5f9fb9294833bf0ec5eec7b18632d24
+  revision: 17214b8188b34ba6452bf9050f38b787076844bf
+  tag: v0.3.3
   specs:
-    ootalk (0.3.2)
+    ootalk (0.3.3)
 
 GEM
   remote: https://rubygems.org/
@@ -322,4 +323,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.4
+   1.10.6
