@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/SBR2015/OoTalk.git
-  revision: 5d8b278448b8556faa0f0e05aa33846be17b488b
+  revision: 17214b8188b34ba6452bf9050f38b787076844bf
+  tag: v0.3.3
   specs:
-    ootalk (0.3.0)
+    ootalk (0.3.3)
 
 GEM
   remote: https://rubygems.org/
@@ -122,7 +123,7 @@ GEM
       multi_json (~> 1.2)
     json (1.8.3)
     kgio (2.10.0)
-    listen (3.0.4)
+    listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     loofah (2.0.3)
@@ -141,7 +142,7 @@ GEM
     multi_json (1.11.2)
     nenv (0.2.0)
     newrelic_rpm (3.14.0.305)
-    nokogiri (1.6.6.3)
+    nokogiri (1.6.6.4)
       mini_portile (~> 0.6.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
@@ -212,7 +213,7 @@ GEM
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.0)
+    rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -249,7 +250,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    spring (1.4.3)
+    spring (1.4.4)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.4.0)
@@ -322,4 +323,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.4
+   1.10.6
