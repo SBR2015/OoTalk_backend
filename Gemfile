@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -104,8 +104,10 @@ end
 # Use http Clients
 gem 'httpclient'
 
-# OoTalk
-gem 'ootalk', :git => 'https://github.com/SBR2015/OoTalk.git', :tag => 'v0.3.3'
+# Ootalk
+gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git', :tag => 'v0.4.0'
+gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.git', :tag => 'v1.0.0'
+
 # database settings
 # gem 'foreigner'
 
@@ -115,7 +117,3 @@ gem 'devise'
 # gem 'omniauth'
 # gem 'omniauth-facebook'
 #gem 'omniauth-github'
-
-# old OoTalk_backend
-# gem 'compass', :require => false
-# gem 'rails-api'
