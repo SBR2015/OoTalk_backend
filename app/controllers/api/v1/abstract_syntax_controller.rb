@@ -1,7 +1,7 @@
 class Api::V1::AbstractSyntaxController < ApplicationController
 
   def show
-    @asl = AbstractSyntaxLists.create(params[:language])
+    @asl = Ootalk::Syntaxlist.create(params[:language])
     render json: @asl.to_json
   end
 

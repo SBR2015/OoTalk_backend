@@ -7,7 +7,7 @@ class Api::V1::ExecuteController < ApplicationController
   def create
     setcode
     src = @code['src']
-    prog = OoTalk::Program.new(src)
+    prog = Program.new(src)
     render :json => prog.exec.to_json
   end
 

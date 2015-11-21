@@ -1,9 +1,16 @@
 GIT
-  remote: https://github.com/SBR2015/OoTalk.git
-  revision: 17214b8188b34ba6452bf9050f38b787076844bf
-  tag: v0.3.3
+  remote: https://github.com/SBR2015/ootalk-syntaxlist.git
+  revision: 25e1409bed827c38667da0e0722d92e580257820
+  tag: v1.0.0
   specs:
-    ootalk (0.3.3)
+    ootalk-syntaxlist (1.0.0)
+
+GIT
+  remote: https://github.com/SBR2015/ootalk.git
+  revision: 61562c23fca91b367b11afdd6f5b3923d3f26605
+  tag: v0.4.0
+  specs:
+    ootalk (0.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -136,7 +143,7 @@ GEM
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
-    mime-types (2.6.2)
+    mime-types (2.99)
     mini_portile (0.6.2)
     minitest (5.8.3)
     multi_json (1.11.2)
@@ -229,7 +236,7 @@ GEM
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
-    rspec-support (3.4.0)
+    rspec-support (3.4.1)
     ruby-graphviz (1.2.2)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -302,6 +309,7 @@ DEPENDENCIES
   meta_request
   newrelic_rpm
   ootalk!
+  ootalk-syntaxlist!
   pg
   pry
   pry-byebug
@@ -310,6 +318,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails-erd
   rails_12factor
+  rake
   rb-fsevent
   rspec-rails
   sass-rails (~> 5.0)
