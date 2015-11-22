@@ -19,7 +19,10 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe Api::V1::CoursesController, type: :controller do
-
+  before :each do
+    @course = FactoryGirl.create(:course)
+    @lesson = FactoryGirl.create(:lesson)
+  end
   # This should return the minimal set of attributes required to create a valid
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.

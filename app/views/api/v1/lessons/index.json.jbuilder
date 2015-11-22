@@ -1,4 +1,4 @@
-json.array!(@api_v1_lessons) do |api_v1_lesson|
-  json.extract! api_v1_lesson, :id
-  json.url api_v1_lesson_url(api_v1_lesson, format: :json)
+json.array!(@lessons) do |lesson|
+  json.extract! lesson, :id, :title
+  json.url api_v1_course_lesson_url(@course.id, lesson, format: :json)
 end

@@ -1,4 +1,5 @@
 class Api::V1::CoursesController < ApplicationController
+  before_action :validate_admin, except: [:index, :show]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /api/v1/courses
@@ -57,13 +58,14 @@ class Api::V1::CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.find(params[:id])
-    end
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def course_params
-      params[:course]
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def course_params
+    params[:course]
+  end
 end
