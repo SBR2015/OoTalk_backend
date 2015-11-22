@@ -13,10 +13,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :abstract_syntax, only: [:show], param: :language ,path: :abstractsyntax
       resources :execute
-      # match 'abstractsyntax', to: 'api/v1/abstract_syntax#index', via: 'get'
+      resources :courses, except: [:new] do
+        resources :lessons, except: [:new]
+      end
     end
   end
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
