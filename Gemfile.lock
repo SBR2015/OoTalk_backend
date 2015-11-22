@@ -318,7 +318,6 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails-erd
   rails_12factor
-  rake
   rb-fsevent
   rspec-rails
   sass-rails (~> 5.0)
