@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#output_code table{
+  th {
+
+  }
+
+
+  thead {
+    th {
+      color: #555555;
+    }
+  }
+  tbody {
+    th {
+      color: #f7f7f7;
+      font-size: 22px;
+      font-weight: bold;
+      border-right: 1px solid #f7f7f7;
+      font-family: monospace;
+      background-color: #BDC3C7;
+    }
+  }
+}
+
 .navbar-brand img {
   max-height: 50px;
   margin-top: -15px;
@@ -56,33 +79,6 @@
     padding: 5px;
     margin-top: 10px;
     height: 100px;
-    position: relative;
-    :before {
-      @mixin line-number($num) {
-        $result: "  1";
-        $pre: "";
-        @for $i from 2 through $num {
-          $pre: "";
-          @if $i < 10 {
-            $pre: "  ";
-          }
-          @else if $i < 100 {
-            $pre: " ";
-          }
-          $result: $result + #{$pre}#{$i};
-        }
-        content: $result;
-      }
-      @include line-number(20);
-      display: block;
-      height: 86%;
-      width: 2em;
-      position: absolute;
-      left: 0;
-      word-wrap: break-word;
-      overflow: hidden;
-    }
-
     .string {
       color: #a11;
     }

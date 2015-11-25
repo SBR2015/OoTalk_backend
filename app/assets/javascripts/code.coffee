@@ -39,11 +39,11 @@ $ ->
       success: (data) ->
         console.log data
 #        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        headline_text = '<table><tr><th>回目</td><th>実行文</th><th>実行結果</th></tr></table>'
+        headline_text = '<table><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
         $('#output_code').append(headline_text)
         for d, i in data
-          line_text = '<tr><td>' + (i+1).toString() + '</td><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
-          $('#output_code table').append(line_text)
+          line_text = '<tr><th>' + (i+1).toString() + '</th><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
+          $('#output_code table tbody').append(line_text)
 #          console.log line_text
       error: (XMLHttpRequest, textStatus, errorThrown) ->
         alert(textStatus)
