@@ -56,6 +56,32 @@
     padding: 5px;
     margin-top: 10px;
     height: 100px;
+    position: relative;
+    :before {
+      @mixin line-number($num) {
+        $result: "  1";
+        $pre: "";
+        @for $i from 2 through $num {
+          $pre: "";
+          @if $i < 10 {
+            $pre: "  ";
+          }
+          @else if $i < 100 {
+            $pre: " ";
+          }
+          $result: $result + #{$pre}#{$i};
+        }
+        content: $result;
+      }
+      @include line-number(20);
+      display: block;
+      height: 86%;
+      width: 2em;
+      position: absolute;
+      left: 0;
+      word-wrap: break-word;
+      overflow: hidden;
+    }
 
     .string {
       color: #a11;
