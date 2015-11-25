@@ -268,6 +268,23 @@ $ ->
     o["code[src]"] = doc.getValue()
     executeRequest(o)
 
+  $('.lang').click ->
+    changeLang(this.name, "/?lang=" + this.name)
+
+  changeLang = (lang, queryStr) ->
+    event.preventDefault()
+    trees = []
+    ootalk.init()
+    createTreeNode($("#input_code"))
+    console.log ootalk.tree()
+    for elem in ootalk.tree()
+      trees.push {"Program": elem}
+
+    console.log JSON.stringify trees
+    $('#output_code').text ""
+
+    localStorage[lang] = JSON.stringify trees
+    location.href = queryStr
 
   $('#ast_code_execute').submit (event) ->
     event.preventDefault()
