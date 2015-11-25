@@ -38,6 +38,13 @@
       cursor: move;
     }
 
+    #child-line {
+      padding: 0.2em;
+      background-color: lightpink;
+      color: white;
+      display: inline-block;
+    }
+
     background: image_url("ootalk_background.png") no-repeat 10px 30px;
  }
 

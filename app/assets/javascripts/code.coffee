@@ -50,32 +50,29 @@ $ ->
     obj.draggable
       appendTo: "body"
       helper: "clone"
-
       start: (event, ui) ->
         console.log "start drag"
       drag: (event, ui) ->
-        console.log "while drag"
+#        console.log "while drag"
       stop: (event, ui) ->
-        console.log "stop drag"
+#        console.log "stop drag"
 
   clone_dragged = (ui) ->
     clone_drag = $(ui.draggable).clone()
     clone_string = clone_drag.attr('string')
-    this_string = if typeof clone_string isnt 'undefined' then clone_string else null
+    this_string = clone_string
+    if typeof clone_string isnt 'undefined' then clone_string else null
 
     # もう既に子がいればbreak
     return if this_string is null
+
     clone_drag.text('')
 
     for s in this_string.split('\t')
       child_line = $('<span></span>').text(s).attr('class_name', 'null')
 
       if s.charAt(0) is "@"
-        $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2)).css
-          padding: "0.5em"
-          "background-color": "lightpink"
-          color: "white"
-          display: "inline-block"
+        $(child_line).attr('class_name', s.charAt(1).toUpperCase() + s.slice(2)).attr('id', "child-line")
 
         #コンスタントの処理
         if (ui.draggable.attr("class_name") is "Constant") or (ui.draggable.attr("class_name") is "Variable")
@@ -95,20 +92,22 @@ $ ->
           #各elemenの入れ子
         $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
           tolerance: "pointer"
-          #右サイドバーのボタンのみドロップ可
+          #入れ子にelement一個しか入らない
           accept: ($element) ->
-            return true if $element.parent().attr('id') is 'abstract_syntax_lists'
+            return true if $(this).children().length < 1
           hoverClass: "ui-state-hover"
           drop: (event, ui) ->
-            $(this).text('')
+#            if ui.draggable.parent().attr('id') is 'input_code'
+#              $(ui.draggable).removeClass('ui-widget-content')
             $("#input_code").droppable('enable')
-            $(this).droppable('disable')
-            $(this).css(padding: 0)
             $(this).append(clone_dragged(ui))
+
           #２度ドロップを防ぐ
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
+        $(child_line).sortable
+          connectWith: $('#input_code')
       $(clone_drag).append(child_line)
     return clone_drag
 
@@ -182,13 +181,14 @@ $ ->
   # Drop初期化
   $('#input_code').droppable
     tolerance: "pointer"
+    accept: ($element) ->
+      return true if $element.parent().attr('id') is 'abstract_syntax_lists'
     drop: (event, ui) ->
       $(this).append(clone_dragged (ui))
 
   # Sort初期化
   $('#input_code').sortable
-    stop: (event, ui) ->
-      $('.ui-sortable-helper').remove()
+    connectWith: $('#child-line')
 
   #reset button
   $("input[type ='reset']").click ->
