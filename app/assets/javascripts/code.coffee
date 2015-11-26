@@ -56,9 +56,9 @@ $ ->
       start: (event, ui) ->
         console.log "start drag"
       drag: (event, ui) ->
-#        console.log "while drag"
+        console.log "while drag"
       stop: (event, ui) ->
-#        console.log "stop drag"
+        console.log "stop drag"
 
   clone_dragged = (ui) ->
     clone_drag = $(ui.draggable).clone()
@@ -93,24 +93,23 @@ $ ->
           $(child_line).text('').append(consInput)
 
           #各elemenの入れ子
-        $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
+        $(child_line).droppable
           tolerance: "pointer"
           #入れ子にelement一個しか入らない
           accept: ($element) ->
-            return true if $(this).children().length < 1
+            return true if $(this).children().length < 1 && $element.parent().attr('id') is 'abstract_syntax_lists'
           hoverClass: "ui-state-hover"
+
           drop: (event, ui) ->
-#            if ui.draggable.parent().attr('id') is 'input_code'
-#              $(ui.draggable).removeClass('ui-widget-content')
-            $("#input_code").droppable('enable')
             $(this).append(clone_dragged(ui))
+            $("#input_code").droppable('enable')
 
           #２度ドロップを防ぐ
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
         $(child_line).sortable
-          connectWith: $('#input_code')
+          connectWith: '#input_code'
       $(clone_drag).append(child_line)
     return clone_drag
 
@@ -191,11 +190,12 @@ $ ->
 
   # Sort初期化
   $('#input_code').sortable
-    connectWith: $('#child-line')
+    connectWith: '#child-line'
 
   #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+    $('#input_code').droppable('enable')
 
   #ゴミ箱
   $('#trash-can').droppable
