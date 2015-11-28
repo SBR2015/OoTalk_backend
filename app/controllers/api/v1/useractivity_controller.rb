@@ -10,7 +10,6 @@ class Api::V1::UseractivityController < ApplicationController
 
   def create
     @activity = UserActivity.new(activity_params)
-    
     respond_to do |format|
       if @activity.save
         format.json { render :show, status: :created, location: @activity }
