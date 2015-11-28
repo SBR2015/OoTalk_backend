@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  # Admin
+  scope "(:lang)" do
+    resources :products
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   # Coding page
