@@ -225,6 +225,19 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
+  $('#sidebar').hover (->
+    $(this).animate {
+      'marginLeft': '340px',
+      'opacity': '0.7'
+    }, 500
+    return
+  ), ->
+    $(this).animate {
+      'marginLeft': '0',
+      'opacity': '1'
+    }, 500
+    return
+
   $('#code_execute').submit (event) ->
     event.preventDefault()
     $('#output_code').text ""
@@ -250,5 +263,5 @@ $ ->
     o = {}
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
-
   return
+
