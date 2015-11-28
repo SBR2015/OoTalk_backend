@@ -55,14 +55,6 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested api_v1 as @api_v1" do
-      course = Course.create! valid_attributes
-      get :edit, {:id => course.to_param}, valid_session
-      expect(assigns(:api_v1)).to eq(course)
-    end
-  end
-
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Course" do
