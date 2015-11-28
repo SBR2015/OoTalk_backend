@@ -38,10 +38,13 @@ $ ->
       timeout: 10000
       success: (data) ->
         console.log data
-        # $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        for d in data
-          line_text = 'exec: ' + d['exec'] + ' -> result: ' + d['result'] + ''
-          $('#output_code').append('<div>' + line_text + '</div>')
+#        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
+        headline_text = '<table><tr><th>回目</td><th>実行文</th><th>実行結果</th></tr></table>'
+        $('#output_code').append(headline_text)
+        for d, i in data
+          line_text = '<tr><td>' + (i+1).toString() + '</td><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
+          $('#output_code table').append(line_text)
+#          console.log line_text
       error: (XMLHttpRequest, textStatus, errorThrown) ->
         alert(textStatus)
 
@@ -53,9 +56,9 @@ $ ->
       start: (event, ui) ->
         console.log "start drag"
       drag: (event, ui) ->
-#        console.log "while drag"
+        console.log "while drag"
       stop: (event, ui) ->
-#        console.log "stop drag"
+        console.log "stop drag"
 
   clone_dragged = (ui) ->
     clone_drag = $(ui.draggable).clone()
@@ -90,24 +93,23 @@ $ ->
           $(child_line).text('').append(consInput)
 
           #各elemenの入れ子
-        $(child_line).droppable if $(child_line).parent().attr('class_name') isnt 'Constant'
+        $(child_line).droppable
           tolerance: "pointer"
           #入れ子にelement一個しか入らない
           accept: ($element) ->
-            return true if $(this).children().length < 1
+            return true if $(this).children().length < 1 && $element.parent().attr('id') is 'abstract_syntax_lists'
           hoverClass: "ui-state-hover"
+
           drop: (event, ui) ->
-#            if ui.draggable.parent().attr('id') is 'input_code'
-#              $(ui.draggable).removeClass('ui-widget-content')
-            $("#input_code").droppable('enable')
             $(this).append(clone_dragged(ui))
+            $("#input_code").droppable('enable')
 
           #２度ドロップを防ぐ
           over: (event, ui) ->
             $("#input_code").droppable('disable')
 
         $(child_line).sortable
-          connectWith: $('#input_code')
+          connectWith: '#input_code'
       $(clone_drag).append(child_line)
     return clone_drag
 
@@ -188,11 +190,12 @@ $ ->
 
   # Sort初期化
   $('#input_code').sortable
-    connectWith: $('#child-line')
+    connectWith: '#child-line'
 
   #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+    $('#input_code').droppable('enable')
 
   #ゴミ箱
   $('#trash-can').droppable
@@ -222,6 +225,19 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
+  $('#sidebar').hover (->
+    $(this).animate {
+      'marginLeft': '340px',
+      'opacity': '0.7'
+    }, 500
+    return
+  ), ->
+    $(this).animate {
+      'marginLeft': '0',
+      'opacity': '1'
+    }, 500
+    return
+
   $('#code_execute').submit (event) ->
     event.preventDefault()
     $('#output_code').text ""
@@ -247,5 +263,5 @@ $ ->
     o = {}
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
-
   return
+
