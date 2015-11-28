@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  Home: ホーム
+  Input JSON: コード
+  Language: 言語
+  Menu: メニュー
+  Sign up: サインアップ
+  Sign in: ログイン
+  result area: 出力結果
+  Submit: 送信
+  Reset: リセット
+  Delete: 削除
   date:
     abbr_day_names:
     - 日
