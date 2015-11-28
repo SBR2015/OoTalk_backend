@@ -225,7 +225,7 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
-  $('#sidebar').hover (->
+  $('#navbar_tail').hover (->
     $(this).animate {
       'marginLeft': '340px',
       'opacity': '0.7'
