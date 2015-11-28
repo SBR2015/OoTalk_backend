@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  Submit: Submit
+  Reset: Reset
+  Delete: Delete
   date:
     abbr_day_names:
     - Sun
