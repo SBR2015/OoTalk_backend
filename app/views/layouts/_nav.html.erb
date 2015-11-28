@@ -23,7 +23,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to_if params[:lang] != 'en', 'English', "#{request.path}?lang=en" %></li>
-            <li><%= link_to_if params[:lang].present?, '日本語', "#{request.path}" %></li>
+            <li><%= link_to_if params[:lang].present?, '日本語', "#{request.path}"%></li>
             <li><%= link_to_if params[:lang] != 'cn', '中文', "#{request.path}?lang=cn" %></li>
             <li><a href="/?lang=vi">Tiếng Việt</a></li>
           </ul>
