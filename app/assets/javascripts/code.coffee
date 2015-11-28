@@ -39,11 +39,11 @@ $ ->
       success: (data) ->
         console.log data
 #        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        headline_text = '<table><tr><th>回目</td><th>実行文</th><th>実行結果</th></tr></table>'
+        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
         $('#output_code').append(headline_text)
         for d, i in data
-          line_text = '<tr><td>' + (i+1).toString() + '</td><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
-          $('#output_code table').append(line_text)
+          line_text = '<tr><th>' + (i+1).toString() + '</th><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
+          $('#output_code table tbody').append(line_text)
 #          console.log line_text
       error: (XMLHttpRequest, textStatus, errorThrown) ->
         alert(textStatus)
@@ -195,6 +195,7 @@ $ ->
   #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+    $('#output_code').empty()
     $('#input_code').droppable('enable')
 
   #ゴミ箱
@@ -225,6 +226,19 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
+  $('#sidebar').hover (->
+    $(this).animate {
+      'marginLeft': '340px',
+      'opacity': '0.7'
+    }, 500
+    return
+  ), ->
+    $(this).animate {
+      'marginLeft': '0',
+      'opacity': '1'
+    }, 500
+    return
+
   $('#code_execute').submit (event) ->
     event.preventDefault()
     $('#output_code').text ""
@@ -250,5 +264,5 @@ $ ->
     o = {}
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
-
   return
+

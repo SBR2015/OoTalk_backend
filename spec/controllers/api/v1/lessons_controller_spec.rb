@@ -52,43 +52,30 @@ RSpec.describe Api::V1::LessonsController, type: :controller do
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested api_v1 as @api_v1" do
-      lesson = Lesson.create! valid_attributes
-      get :edit, {:id => lesson.to_param}, valid_session
-      expect(assigns(:api_v1)).to eq(lesson)
-    end
-  end
-
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Lesson" do
         expect {
-          post :create, {:api_v1 => valid_attributes}, valid_session
+          post :create, {:lesson => valid_attributes}, valid_session
         }.to change(Lesson, :count).by(1)
       end
 
-      it "assigns a newly created api_v1 as @api_v1" do
-        post :create, {:api_v1 => valid_attributes}, valid_session
-        expect(assigns(:api_v1)).to be_a(Lesson)
-        expect(assigns(:api_v1)).to be_persisted
+      it "assigns a newly created lesson as @lesson" do
+        post :create, {:lesson => valid_attributes}, valid_session
+        expect(assigns(:lesson)).to be_a(Lesson)
+        expect(assigns(:lesson)).to be_persisted
       end
 
-      it "redirects to the created api_v1" do
-        post :create, {:api_v1 => valid_attributes}, valid_session
+      it "redirects to the created lesson" do
+        post :create, {:lesson => valid_attributes}, valid_session
         expect(response).to redirect_to(Lesson.last)
       end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved api_v1 as @api_v1" do
-        post :create, {:api_v1 => invalid_attributes}, valid_session
-        expect(assigns(:api_v1)).to be_a_new(Lesson)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, {:api_v1 => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+      it "assigns a newly created but unsaved lesson as @lesson" do
+        post :create, {:lesson => invalid_attributes}, valid_session
+        expect(assigns(:lesson)).to be_a_new(Lesson)
       end
     end
   end
