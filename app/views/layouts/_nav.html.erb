@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/"><%= t('Home') %></a></li>
         <li><a href="/codejson"><%= t('Input JSON') %></a></li>
+        <li><a href="#" id="subject">Courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -43,5 +43,6 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
+    <%= render 'layouts/partials/navbar_tail' %>
   </div><!-- /.container-fluid -->
 </nav>

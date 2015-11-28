@@ -1,18 +1,17 @@
 // Place all the styles related to the code controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#sidebar {
-  z-index: 99;
-  cursor: pointer;
-  position: fixed;
-  //top: 40%;
-  left: -340px;
-  background: black;
-  height: 70%;
-  width: 380px;
-  color: white;
-  font-size: 16px;
-  opacity: 1;
+
+#navbar_tail {
+  display: none;
+}
+
+#course_list {
+  display: none;
+}
+
+#lesson_list {
+  display: none;
 }
 
 .table-hover tbody tr:hover td {
