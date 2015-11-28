@@ -39,7 +39,7 @@ $ ->
       success: (data) ->
         console.log data
 #        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        headline_text = '<table><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
+        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
         $('#output_code').append(headline_text)
         for d, i in data
           line_text = '<tr><th>' + (i+1).toString() + '</th><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
@@ -196,6 +196,7 @@ $ ->
   #reset button
   $("input[type ='reset']").click ->
     $('#input_code').empty()
+    $('#output_code').empty()
 
   #ゴミ箱
   $('#trash-can').droppable

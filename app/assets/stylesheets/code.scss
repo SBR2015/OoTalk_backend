@@ -2,34 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.table-hover tbody tr:hover td {
+  background-color: #E4F1FE;;
+}
+
 #output_code table{
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-
-  tr:hover {
-    background: #E4F1FE;
-    -o-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
-  }
-
   thead {
+    th:first-child {
+      width: 50px;
+      border-right: solid 1px rgb(221, 221, 221);
+      background-color: whitesmoke;
+    }
     th {
-      color: #555555;
+      padding-left: 30px;
     }
   }
+
   tbody {
     th {
-      color: #f7f7f7;
-      font-size: 22px;
-      font-weight: bold;
-      border-right: 1px solid #f7f7f7;
-      font-family: monospace;
-      background-color: #BDC3C7;
+      color: grey;
+      font-weight: normal;
+      text-align: right;
+      width: 50px;
+      border-right: solid 1px rgb(221, 221, 221);
+      background-color: whitesmoke;
     }
+    td {
+      padding-left: 30px;
+    }
+
+    //tr:hover {
+    //  background: #E4F1FE;
+    //  -o-transition: all 0.1s ease-in-out;
+    //  -webkit-transition: all 0.1s ease-in-out;
+    //  -moz-transition: all 0.1s ease-in-out;
+    //  -ms-transition: all 0.1s ease-in-out;
+    //  transition: all 0.1s ease-in-out;
+    //}
   }
 }
 
@@ -49,7 +58,7 @@
     width: 200px;
     padding: 0.5em;
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     cursor: move;
   }
 }
@@ -84,9 +93,13 @@
   }
 
   pre#output_code {
-    padding: 5px;
+    padding: 10px;
     margin-top: 10px;
-    height: 100px;
+    white-space: normal;
+    background-color: white;
+    font-size: 15px;
+    height: 200px;
+
     .string {
       color: #a11;
     }
