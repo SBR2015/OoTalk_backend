@@ -228,14 +228,15 @@ $ ->
   # Navigation var
   $('#subject').click (->
     $('#navbar_tail').slideToggle()
+#    $('#navbar_tail').slideUp()
   )
-
-
 
 #  $('#subject').hover (->
 #    $('#navbar_tail').slideDown()
 #    return
-#  )
+#  ), ->
+#    $('#navbar_tail').slideDown()
+#    return
 #  $('article').hover (->
 #    $('#navbar_tail').slideUp()
 #    return
