@@ -1,0 +1,30 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+cn:
+  devise:
+    confirmations:
+    mailer:
+    passwords:
+      forgot: "忘记密码?"
+      email: "邮箱"
+      send: "发送"
+    registrations:
+      sign_up: "注册"
+      edit_profile: "编辑个人信息"
+      nickname: "用户名"
+      email: "邮箱地址"
+      password: "密码"
+      current_password: "当前密码"
+      min_password_length: "文字以上"
+      confirmation: "确认"
+      update: "更新"
+      cancel: "删除帐户"
+      back: "返回"
+    sessions:
+      sign_in: "登录"
+      nickname_or_email: "用户名或者邮箱地址"
+      password: "密码"
+      remember: "保存"
+    shared:
+    unlocks:
+    sign_out: "登出"
