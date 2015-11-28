@@ -23,42 +23,34 @@ class Api::V1::LessonsController < ApplicationController
   def edit
   end
 
-  # POST /api/v1/courses/:course_id/lessons
   # POST /api/v1/courses/:course_id/lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
-        format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /api/v1/courses/:course_id/lessons/1
   # PATCH/PUT /api/v1/courses/:course_id/lessons/1.json
   def update
     respond_to do |format|
-      if @lesson.update(api_v1_lesson_params)
-        format.html { redirect_to @api_v1_lesson, notice: 'Lesson was successfully updated.' }
+      if @lesson.update(lesson_params)
         format.json { render :show, status: :ok, location: @lesson }
       else
-        format.html { render :edit }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /api/v1/courses/:course_id/lessons/1
   # DELETE /api/v1/courses/:course_id/lessons/1.json
   def destroy
     @lesson.destroy
     respond_to do |format|
-      format.html { redirect_to api_v1_lessons_url, notice: 'Lesson was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
