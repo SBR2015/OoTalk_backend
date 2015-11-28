@@ -3,10 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #output_code table{
-  th {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
 
+  tr:hover {
+    background: #E4F1FE;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
-
 
   thead {
     th {
