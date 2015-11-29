@@ -2,59 +2,34 @@ class Api::V1::CoursesController < ApplicationController
   before_action :validate_admin, except: [:index, :show]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  # GET /api/v1/courses
-  # GET /api/v1/courses.json
   def index
     @courses = Course.all
+    render "index", :formats => [:json], :handlers => [:jbuilder]
   end
 
-  # GET /api/v1/courses/1
-  # GET /api/v1/courses/1.json
   def show
   end
 
-  # GET /api/v1/courses/1/edit
-  def edit
-  end
-
-  # POST /api/v1/courses
-  # POST /api/v1/courses.json
   def create
     @course = Course.new(course_params)
-
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @api_v1_course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    if @course.save
+      render "show", :formats => [:json], :handlers => [:jbuilder]
+    else
+      render :json => {:error => @lesson.errors}
     end
   end
 
-  # PATCH/PUT /api/v1/courses/1
-  # PATCH/PUT /api/v1/courses/1.json
   def update
-    respond_to do |format|
-      if @api_v1_course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @api_v1_course }
-      else
-        format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    if @course.save
+      render "show", :formats => [:json], :handlers => [:jbuilder]
+    else
+      render :json => {:error => @lesson.errors}
     end
   end
 
-  # DELETE /api/v1/courses/1
-  # DELETE /api/v1/courses/1.json
   def destroy
     @course.destroy
-    respond_to do |format|
-      format.html { redirect_to api_v1_courses_url, notice: 'Course was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    render :json => {:status => 'deleted', :course => @course}
   end
 
   private
