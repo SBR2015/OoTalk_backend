@@ -1,0 +1,2 @@
+module UseractivitiesHelper
+end
