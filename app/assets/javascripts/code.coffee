@@ -127,6 +127,7 @@ $ ->
           class_name: l.class_name
           string: l.string
           'data-toggle': 'popover'
+          'data-trigger': 'hover'
           'data-content': 'dataaaaaaaaaaaaaaaaaa').text(l.name)
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
