@@ -226,18 +226,38 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
-  $('#sidebar').hover (->
-    $(this).animate {
-      'marginLeft': '340px',
-      'opacity': '0.7'
-    }, 500
+  # Navigation var
+  $('#subject').click (->
+    $('#navbar_tail').slideToggle()
+#    $('#navbar_tail').slideUp()
+  )
+
+#  $('#subject').hover (->
+#    $('#navbar_tail').slideDown()
+#    return
+#  ), ->
+#    $('#navbar_tail').slideDown()
+#    return
+#  $('article').hover (->
+#    $('#navbar_tail').slideUp()
+#    return
+#  )
+  $('#courses').hover (->
+    $('#course_list').show()
+    $('#lesson_list').hide()
+
     return
-  ), ->
-    $(this).animate {
-      'marginLeft': '0',
-      'opacity': '1'
-    }, 500
+  )
+  $('#lessons').hover (->
+    $('#course_list').hide()
+    $('#lesson_list').show()
     return
+  )
+
+
+
+#    $('#navbar_tail').slideToggle()
+
 
   $('#code_execute').submit (event) ->
     event.preventDefault()

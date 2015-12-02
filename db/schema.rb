@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128095936) do
+ActiveRecord::Schema.define(version: 20151129123615) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20151128095936) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "order",      default: 0
-  end
-
-  create_table "user_activities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.integer  "lesson_id"
-    t.boolean  "done",       default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
   end
 
   create_table "useractivities", force: :cascade do |t|
@@ -61,6 +52,10 @@ ActiveRecord::Schema.define(version: 20151128095936) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
