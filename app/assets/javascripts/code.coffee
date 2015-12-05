@@ -129,7 +129,8 @@ $ ->
           'data-toggle': 'popover'
           'data-trigger': 'hover'
           title: l.name
-          'data-content': '説明')
+          'data-content': '説明').append("<i class='fa fa-plus fa-2x'></i>")
+
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
       $('[data-toggle="popover"]').popover()

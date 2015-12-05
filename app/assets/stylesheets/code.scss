@@ -65,17 +65,23 @@
   border: 1px solid #aaaaaa;
   padding-left: 5px;
   padding-top: 5px;
+  background-color: #F7F7F7;
 
   #syntax {
     display: inline-block;
-    overflow-y: hidden;
+    border: none;
+    border-radius: 10px;
     height: 50px;
     width: 50px;
-    padding: 5px;
+    padding: 8px;
     margin-right: 5px;
+    margin-bottom: 5px;
     text-align: center;
     font-size: 18px;
     cursor: move;
+    color: white;
+    background: lightblue;
+    //box-shadow: 2px 2px 2px #888888;;
   }
 }
 
@@ -112,7 +118,7 @@
     padding: 10px;
     margin-top: 10px;
     white-space: normal;
-    background-color: white;
+    background-color: #F7F7F7;
     font-size: 15px;
     height: 200px;
 
