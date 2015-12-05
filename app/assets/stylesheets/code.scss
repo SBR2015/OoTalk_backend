@@ -18,12 +18,18 @@
 
   #lesson_list {
     display: none;
+    div {
+      background-color: #009900;
+    }
+    div hover {
+
+    }
   }
 
   #lesson_detail {
     desplay: none;
     #title {
-      padding: 0px 10px 20px 20px;
+      padding: 0px 10px 10px 20px;
       text-align: center;
     }
     #line {
