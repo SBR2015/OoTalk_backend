@@ -14,16 +14,43 @@
 
   #course_list {
     display: none;
+
+    div {
+      width: 100px;
+      height: 130px;
+      background-color: white;
+      display: inline-block;
+      margin: 10px;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    div:hover{
+      color: white;
+      background-color: #2ABB9B;
+
+    }
+  }
+
+  .course-title:hover {
+    background-color: #2ABB9B;
+    color: white;
   }
 
   #lesson_list {
     display: none;
+    div {
+      background-color: #009900;
+    }
+    div hover {
+
+    }
   }
 
   #lesson_detail {
     desplay: none;
     #title {
-      padding: 0px 10px 20px 20px;
+      padding: 0px 10px 10px 20px;
       text-align: center;
     }
     #line {
