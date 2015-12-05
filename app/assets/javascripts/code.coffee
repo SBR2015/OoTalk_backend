@@ -113,6 +113,13 @@ $ ->
       $(clone_drag).append(child_line)
     return clone_drag
 
+  #syntax_listのアイコン
+  syntax_icons = ['+', '−', '×', '÷', 'mod', 'log', 'pow',
+                  'and', 'nand', 'or', 'nor', 'xor',
+                  '=', '≠','>', '≥', '<', '≤',
+                  'prog', 'instruction', 'skip',
+                  'assign', 'loop', 'if','var', 'cons']
+
   initializeSyntaxList = (lang) ->
     URL = "/api/v1/abstractsyntax/"
     LANG = lang ? "en"
@@ -120,7 +127,8 @@ $ ->
     $.get URL + LANG, null, (lists) =>
       abstract_syntax_lists = $("#abstract_syntax_lists")
       syntaxList = lists
-      for l in lists
+      for i in [0..lists.length-1]
+        l = lists[i]
         line = $('<div></div>',
           class: "ui-widget-content" + " " + l.class_name
           id: "syntax"
@@ -129,7 +137,8 @@ $ ->
           'data-toggle': 'popover'
           'data-trigger': 'hover'
           title: l.name
-          'data-content': '説明')
+          'data-content': '説明').text(syntax_icons[i])
+
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
       $('[data-toggle="popover"]').popover()
