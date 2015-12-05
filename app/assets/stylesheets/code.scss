@@ -6,17 +6,33 @@
   display: none;
 }
 
-#course_list {
-  display: none;
+#courses_contents {
+  padding: 0px 100px 10px 100px;
+
+  #course_list {
+    display: none;
+  }
+
+  #lesson_list {
+    display: none;
+  }
+
+  #lesson_detail {
+    desplay: none;
+    #title {
+      padding: 0px 10px 20px 20px;
+      text-align: center;
+    }
+    #line {
+      border-bottom: 5px solid #D2D7D3;
+    }
+    #body {
+      padding: 20px 20px 0px 20px;
+      font-size: 17px;
+    }
+  }
 }
 
-#lesson_list {
-  display: none;
-}
-
-#lesson_detail {
-  desplay: none;
-}
 
 .table-hover tbody tr:hover td {
   background-color: #E4F1FE;;
