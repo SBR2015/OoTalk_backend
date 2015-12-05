@@ -298,7 +298,7 @@ $ ->
     $('#navbar_tail').slideToggle()
     show_courses()
     get_courses()
-    $('.breadcrumb').empty().append('<li id="courses">Courses</li>')
+    $('.breadcrumb').empty().append('<li id="courses"><i class="fa fa-book"></i>Courses</li>')
     return
   )
 
@@ -325,7 +325,7 @@ $ ->
   $('#course_list').on 'click', 'div', ->
     get_lessons(this.id)
     show_lessons()
-    $('.breadcrumb').empty().append('<li id="courses">Courses</li><li id="lessons">Lessons</li>')
+    $('.breadcrumb').empty().append('<li id="courses"><i class="fa fa-book"></i>Courses</li><li id="lessons"><i class="fa fa-file-text-o"></i>Lessons</li>')
     return
 #  )
 
