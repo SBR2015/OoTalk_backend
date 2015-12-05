@@ -11,19 +11,37 @@
 
 #courses_contents {
   padding: 0px 100px 10px 100px;
-
+  //text-align: center;
   #course_list {
     display: none;
   }
 
   #lesson_list {
     display: none;
+    //text-align: center;
+    padding-left: 90px;
+    div {
+      display: inline-table;
+      background-color: #ffffff;
+      color: #34495E;
+      width: 350px;
+      height: 40px;
+      text-align: center;
+      padding-top: 10px;
+      margin-right: 90px;
+      margin-bottom: 15px;
+      //margin-left: 80px;
+    }
+    div:hover {
+      background-color: #2ABB9B;
+      color: #ffffff;
+    }
   }
 
   #lesson_detail {
     desplay: none;
     #title {
-      padding: 0px 10px 20px 20px;
+      padding: 0px 10px 10px 20px;
       text-align: center;
     }
     #line {
