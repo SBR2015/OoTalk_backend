@@ -65,14 +65,18 @@
 
 #abstract_syntax_lists {
   height: 400px;
-  width: 210px;
-  overflow-y: scroll;
+  width: 228px;
   border: 1px solid #aaaaaa;
+  padding-left: 5px;
+  padding-top: 5px;
 
-  div {
+  #syntax {
+    display: inline-block;
+    overflow-y: hidden;
     height: 50px;
-    width: 200px;
-    padding: 0.5em;
+    width: 50px;
+    padding: 5px;
+    margin-right: 5px;
     text-align: center;
     font-size: 18px;
     cursor: move;

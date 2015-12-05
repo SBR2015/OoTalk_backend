@@ -15,16 +15,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/codejson"><%= t('Input JSON') %></a></li>
-        <li><a href="#" id="subject">Courses</a></li>
+        <li><a href="#" id="subject"><%= t('Courses') %></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t('Language') %>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to_if params[:lang] != 'en', 'English', "#{request.path}?lang=en" %></li>
-            <li><%= link_to_if params[:lang].present?, '日本語', "#{request.path}"%></li>
-            <li><%= link_to_if params[:lang] != 'cn', '中文', "#{request.path}?lang=cn" %></li>
+            <li><%= link_to 'English', "#{request.path}" %></li>
+            <li><%= link_to '日本語', "#{request.path}?lang=ja"%></li>
+            <li><%= link_to '中文', "#{request.path}?lang=cn" %></li>
             <li><a href="/?lang=vi">Tiếng Việt</a></li>
           </ul>
         </li>
@@ -33,7 +33,7 @@
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
 			<% if current_user.admin? %>
-			<li><a href="/admin">admin</a></li>
+			<li><%= link_to 'admin', rails_admin_path %></li>
 			<% end %>
 			<!-- <%= current_user.email if user_signed_in? %> -->
               <li><%= link_to t('devise.registrations.edit_profile'), edit_user_registration_path %></li>
