@@ -38,9 +38,3 @@ App information
 - [Travis CI](https://travis-ci.org/SBR2015/OoTalk_backend)
 - [Heroku](http://ootalkbackend.herokuapp.com)
 - [産業技術大学院大学](http://aiit.ac.jp/)
-
-| 開催予定        | 開催日          | お題                 | 参加人数|
-| --------------- |:---------------:| -------------------- | -------:|
-| Git勉強会 Vol.1 | 2013/07/06 (土) | Gitの基本操作        | 123     |
-| Git勉強会 Vol.2 | 2013/11/09 (土) | ブランチモデルとは？ | 456     |
-| Git勉強会 Vol.3 | 未定            | 課題管理との連携     | -       |
