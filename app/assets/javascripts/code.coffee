@@ -231,6 +231,9 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
+
+  ########## Courseリストはここから ############
+
   get_courses = ->
     URL = '/api/v1/courses.json'
     $.get URL, null, (lists) =>
@@ -257,9 +260,10 @@ $ ->
     console.log URL
     this_lesson = ''
     $.get URL, null, (lesson) =>
-      this_lesson += '<div>' + lesson.title + '</div>'
-      this_lesson += '<div id="' + lesson.id + '">' + lesson.body + '</div>'
-      $('#lesson_detail').empty().append(this_lesson)
+      this_lesson += '<div id="title"><h2>' + lesson.title + '</h2></div>'
+      this_lesson += '<div id="line"></div>'
+      this_lesson += '<p id="body" class="lead">' + lesson.body + '</p>'
+      $('#lesson_detail').empty().append('<div id="' + lesson_id + '" course_id="' + course_id + '">' + this_lesson + '</div>')
     return
 
   show_courses = ->
@@ -285,18 +289,24 @@ $ ->
     $('#navbar_tail').slideToggle()
     show_courses()
     get_courses()
+    $('.breadcrumb').empty().append('<li id="courses">Courses</li>')
     return
   )
 
   # breadcrumb courses
-  $('#courses').hover (->
+  $('.breadcrumb').on 'mouseenter mouseleave', '#courses', (->
     get_courses()
     show_courses()
     return
   )
 
   # breadcrumb lessons
-  $('#lessons').hover (->
+  $('.breadcrumb').on 'mouseenter mouseleave', '#lessons', (->
+#  $('#lessons').hover (->
+#    lesson_id = $('#lesson_detail > div').attr('id')
+#    course_id = $('#lesson_detail > div')#.attr('course_id')
+#    console.log course_id
+#    get_lessons(course_id)
     show_lessons()
     return
   )
@@ -306,7 +316,7 @@ $ ->
   $('#course_list').on 'click', 'div', ->
     get_lessons(this.id)
     show_lessons()
-    $('.breadcrumb').append('<li id="lessons">Lessons</li>')
+    $('.breadcrumb').empty().append('<li id="courses">Courses</li><li id="lessons">Lessons</li>')
     return
 #  )
 
@@ -314,8 +324,10 @@ $ ->
 #    console.log $(this).attr('course_id')
     get_detail_lesson($(this).attr('course_id'), $(this).attr('id'))
     show_lesson_detail()
-#    $('.breadcrumb').append('<li id="lessons">Lessons</li>')
+#    $('.breadcrumb').empty().append('<li id="courses">Courses</li><li id="lessons">Lessons</li>')
     return
+
+  ######## courseリストここまで ################
 
 
   $('#code_execute').submit (event) ->
