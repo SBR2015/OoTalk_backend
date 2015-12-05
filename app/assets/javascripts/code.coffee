@@ -115,7 +115,7 @@ $ ->
 
   initializeSyntaxList = (lang) ->
     URL = "/api/v1/abstractsyntax/"
-    LANG = lang ? "ja"
+    LANG = lang ? "en"
     tree_code = {}
     $.get URL + LANG, null, (lists) =>
       abstract_syntax_lists = $("#abstract_syntax_lists")
