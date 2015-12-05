@@ -249,7 +249,7 @@ $ ->
       for l in lists
 #        line = $('<div></div>', id: l.id).text(l.title)
 #        line = '<div id="' + l.id + '">' + l.title + '</div>'
-        all_lists += '<div id="' + l.id + '">' + l.title + '</div>'
+        all_lists += '<div id="' + l.id + '">' + '<i class="fa fa-book fa-5x"></i><br />' + l.title + '</div>'
       $('#course_list').empty().append(all_lists)
 #      $('#course_list').replaceWith(all_lists)
     return
