@@ -123,11 +123,16 @@ $ ->
       for l in lists
         line = $('<div></div>',
           class: "ui-widget-content" + " " + l.class_name
+          id: "syntax"
           class_name: l.class_name
-          string: l.string).text(l.name)
+          string: l.string
+          'data-toggle': 'popover'
+          'data-trigger': 'hover'
+          title: l.name
+          'data-content': 'dataaaaaaaaaaaaaaaaaa').text(l.name)
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
-
+      $('[data-toggle="popover"]').popover()
       enDraggable $('#abstract_syntax_lists div')
 
   createNode = (childnode, className, operand) ->
