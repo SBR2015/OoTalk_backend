@@ -33,7 +33,7 @@
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
 			<% if current_user.admin? %>
-			<li><a href="/admin">admin</a></li>
+			<li><%= link_to 'admin', rails_admin_path %></li>
 			<% end %>
 			<!-- <%= current_user.email if user_signed_in? %> -->
               <li><%= link_to t('devise.registrations.edit_profile'), edit_user_registration_path %></li>
