@@ -226,37 +226,91 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
+  get_courses = ->
+    URL = '/api/v1/courses.json'
+    $.get URL, null, (lists) =>
+      all_lists = ''
+      for l in lists
+#        line = $('<div></div>', id: l.id).text(l.title)
+#        line = '<div id="' + l.id + '">' + l.title + '</div>'
+        all_lists += '<div id="' + l.id + '">' + l.title + '</div>'
+      $('#course_list').empty().append(all_lists)
+#      $('#course_list').replaceWith(all_lists)
+    return
+
+  get_lessons = (course_id) ->
+    URL = '/api/v1/courses/' + course_id + '/lessons.json'
+    $.get URL, null, (lists) =>
+      all_lists = ''
+      for l in lists
+        all_lists += '<div id="' + l.id + '" course_id="' + l.course_id + '">' + l.title + '</div>'
+      $('#lesson_list').empty().append(all_lists)
+    return
+
+  get_detail_lesson = (course_id, lesson_id) ->
+    URL = '/api/v1/courses/' + course_id + '/lessons/' + lesson_id + '.json'
+    console.log URL
+    this_lesson = ''
+    $.get URL, null, (lesson) =>
+      this_lesson += '<div>' + lesson.title + '</div>'
+      this_lesson += '<div id="' + lesson.id + '">' + lesson.body + '</div>'
+      $('#lesson_detail').empty().append(this_lesson)
+    return
+
+  show_courses = ->
+    $('#course_list').show()
+    $('#lesson_list').hide()
+    $('#lesson_detail').hide()
+    return
+
+  show_lessons = ->
+    $('#course_list').hide()
+    $('#lesson_list').show()
+    $('#lesson_detail').hide()
+    return
+
+  show_lesson_detail = ->
+    $('#course_list').hide()
+    $('#lesson_list').hide()
+    $('#lesson_detail').show()
+    return
+
   # Navigation var
   $('#subject').click (->
     $('#navbar_tail').slideToggle()
-#    $('#navbar_tail').slideUp()
+    show_courses()
+    get_courses()
+    return
   )
 
-#  $('#subject').hover (->
-#    $('#navbar_tail').slideDown()
-#    return
-#  ), ->
-#    $('#navbar_tail').slideDown()
-#    return
-#  $('article').hover (->
-#    $('#navbar_tail').slideUp()
-#    return
-#  )
+  # breadcrumb courses
   $('#courses').hover (->
-    $('#course_list').show()
-    $('#lesson_list').hide()
-
+    get_courses()
+    show_courses()
     return
   )
+
+  # breadcrumb lessons
   $('#lessons').hover (->
-    $('#course_list').hide()
-    $('#lesson_list').show()
+    show_lessons()
     return
   )
 
+  # course click
+#  $('#course_list').on 'mouseenter mouseleave', 'div', ->
+  $('#course_list').on 'click', 'div', ->
+    get_lessons(this.id)
+    show_lessons()
+    $('.breadcrumb').append('<li id="lessons">Lessons</li>')
+    return
+#  )
 
-
-#    $('#navbar_tail').slideToggle()
+  $('#lesson_list').on 'click', 'div', ->
+#    console.log $(this).attr('course_id')
+    get_detail_lesson($(this).attr('course_id'), $(this).attr('id'))
+    show_lesson_detail()
+#    $('.breadcrumb').append('<li id="lessons">Lessons</li>')
+    return
 
 
   $('#code_execute').submit (event) ->
@@ -285,4 +339,3 @@ $ ->
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
   return
-
