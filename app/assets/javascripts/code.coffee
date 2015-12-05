@@ -127,8 +127,7 @@ $ ->
     $.get URL + LANG, null, (lists) =>
       abstract_syntax_lists = $("#abstract_syntax_lists")
       syntaxList = lists
-      for i in [0..lists.length-1]
-        l = lists[i]
+      for l, i in lists
         line = $('<div></div>',
           class: "ui-widget-content" + " " + l.class_name
           id: "syntax"
