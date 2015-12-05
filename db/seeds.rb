@@ -28,4 +28,3 @@ lesson_csv.each do |row|
   lesson.order = row[3]
   lesson.save!
 end
-
