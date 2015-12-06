@@ -117,7 +117,6 @@ $ ->
   syntax_icons = ['+', '−', '×', '÷', 'mod', 'log', 'pow',
                   'and', 'nand', 'or', 'nor', 'xor',
                   '=', '≠','>', '≥', '<', '≤',
-                  'prog', 'instruction', 'skip',
                   'assign', 'loop', 'if','var', 'cons']
 
   initializeSyntaxList = (lang) ->
