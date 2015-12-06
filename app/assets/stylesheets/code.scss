@@ -139,12 +139,14 @@
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
-    font-weight: bold;
+    //font-weight: bold;
+    font-family: serif;
+    text-shadow: 1px 1px #aaaaaa;
     cursor: move;
     color: white;
     font-size: 2em;
     background: lightblue;
-    //box-shadow: 2px 2px 2px #888888;;
+    //box-shadow: 1px 1px #aaaaaa;
   }
 }
 

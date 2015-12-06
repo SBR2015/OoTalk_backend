@@ -114,10 +114,10 @@ $ ->
     return clone_drag
 
   #syntax_listのアイコン
-  syntax_icons = ['+', '−', '×', '÷', 'mod', 'log', 'pow',
-                  'and', 'nand', 'or', 'nor', 'xor',
+  syntax_icons = ['+', '−', '×', '÷', '%', 'log', 'aⁿ',
+                  '&', '!&', 'ǀǀ', '!ǀǀ', '⊕',
                   '=', '≠','>', '≥', '<', '≤',
-                  'assign', 'loop', 'if','var', 'cons']
+                  '→', '↻', 'if','a', '0']
 
   initializeSyntaxList = (lang) ->
     URL = "/api/v1/abstractsyntax/"
