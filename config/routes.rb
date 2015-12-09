@@ -1,16 +1,19 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
   # Static Page
   root 'staticsite#index'
-  
+
   # Coding Page
   get '/code', to: 'code#index'
 
+  resources :courses, only: [:index] do
+    resources :lessons, only: [:index, :show]
+  end
   # Json Coding page
   resources :code_json, only: [:index], path: :codejson
-  
+
   # Doorkeeper
   use_doorkeeper do
-    controllers :applications => 'oauth/applications'
+    controllers applications: 'oauth/applications'
   end
 
   # Rails Admin
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
   # API v1
   namespace :api, constraints: { format: :json } do
     namespace :v1 do
-      resources :abstract_syntax, only: [:show], param: :language ,path: :abstractsyntax
+      resources :abstract_syntax, only: [:show], param: :language, path: :abstractsyntax
       resources :execute
       resources :courses, except: [:new, :edit] do
         resources :lessons, except: [:new, :edit]
