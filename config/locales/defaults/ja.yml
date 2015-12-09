@@ -26,10 +26,11 @@ ja:
   Menu: メニュー
   Sign up: サインアップ
   Sign in: ログイン
-  result area: 出力結果
   Submit: 送信
   Reset: リセット
   Courses: コース
+  Excute Code: 実行文
+  Excute Result: 実行結果
   date:
     abbr_day_names:
     - 日

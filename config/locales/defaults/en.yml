@@ -20,8 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  Home: Home
+  Input JSON: Input JSON
+  Language: Language
+  Menu: Menu
+  Sign up: Sign up
+  Sign in: Sign in
   Submit: Submit
   Reset: Reset
+  Courses: Courses
+  Excute Code: Excute Code
+  Excute Result: Excute Result
   date:
     abbr_day_names:
     - Sun

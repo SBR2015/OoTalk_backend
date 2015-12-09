@@ -39,7 +39,7 @@ $ ->
       success: (data) ->
         console.log data
 #        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
+        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>' + I18n.t('Excute Code') + '</th><th>' + I18n.t('Excute Result') + '</th></tr></thead><tbody></tbody></table>'
         $('#output_code').append(headline_text)
         for d, i in data
           line_text = '<tr><th>' + (i+1).toString() + '</th><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
@@ -362,4 +362,5 @@ $ ->
     o = {}
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
+
   return
