@@ -1,3 +1,11 @@
 // Place all the styles related to the staticsite controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  #top_b {
+    background-image: url("us.png");
+    background-repeat: no-repeat;
+    background-position: 1280px 960px;
+  }
+}
