@@ -1,13 +1,24 @@
-Rails.application.routes.draw do
-  # Coding page
-  root 'code#index'
+Rails.application.routes.draw do  
+  # Static Page
+  root 'staticsite#index'
+  
+  # Coding Page
+  get '/code', to: 'code#index'
+
+  # Json Coding page
+  resources :code_json, only: [:index], path: :codejson
+  
+  # Doorkeeper
   use_doorkeeper do
     controllers :applications => 'oauth/applications'
   end
+
+  # Rails Admin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  # Devise
   devise_for :users
-  # Json Coding page
-  resources :code_json, only: [:index], path: :codejson
+
   # API v1
   namespace :api, constraints: { format: :json } do
     namespace :v1 do
