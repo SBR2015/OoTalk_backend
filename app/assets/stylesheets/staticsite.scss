@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body#index_t{
+body#toppage{
   background: url(try.jpg) no-repeat top;
   background-size:100% auto;
   background-color:#ff6666;
@@ -27,40 +27,53 @@ h2{Color: #ffffff;
   text-align: center;
   margin-bottom: 15%;
 }
-#t_bottom{
+#t_middle{
   margin-top: 15%;
 }
-
-div.img
-{
-  margin:2px;
-  border-radius: 60px;
-  float:left;
-  text-align:center;
+#photo {
+  div.img {
+    margin: 2px;
+    border-radius: 60px;
+    float: left;
+    text-align: center;
+  }
+  div.img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    display: inline;
+    margin: 3px;
+    border: 1px solid #333333;
+  }
+  div.img a:hover img {
+    border: 1px solid #ff6666;
+  }
+  div.desc {
+    Color: #ffffff;
+    text-align: center;
+    font-weight: normal;
+    width: 120px;
+    margin: 2px;
+  }
 }
-div.img img
-{ width: 140px;
-  height: 140px;
-  border-radius: 70px;
-  display:inline;
-  margin:3px;
-  border:1px solid #ffffff;
+#contact_icon {
+  div.img {
+    margin: 1px;
+    border-radius: 20px;
+    float: right;
+  }
+  div.img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 3px;
+    border: 1px solid #ffffff;
+  }
+  div.img a:hover img {
+    border: 1px solid #ff6666;
+  }
 }
-div.img a:hover img
-{
-  border:1px solid #ff6666;
-}
-div.desc
-{
-  Color:#ffffff;
-  text-align:center;
-  font-weight:normal;
-  width:120px;
-  margin:2px;
-}
-
 #t_bo{
-  margin-top:410px;
   margin-left: 400px;
   Color:#ffffff;
   border:#ffffff 1px solid;
@@ -72,7 +85,16 @@ div.desc
   border-radius: 28px;
   background-color:#ff6666;
 }
-#t_bo:hover{
-  background-color:#f9f9f9;
-  cursor:pointer;
+#t_bo:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+hr{color: white}
+p.navbar-text{
+  Color:#ffffff;}
+
+footer{
+  width: 100%;
+  background-color: #303030;
+  display: inline-block;
 }
