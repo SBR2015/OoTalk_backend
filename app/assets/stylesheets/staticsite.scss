@@ -2,10 +2,77 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  #top_b {
-    background-image: url("us.png");
-    background-repeat: no-repeat;
-    background-position: 1280px 960px;
-  }
+body{
+  background: url(try.jpg) no-repeat top;
+  background-size:100% auto;
+  background-color:#ff6666;
+}
+h3,h5,a {
+  Color: #ffffff;
+  text-align: center;
+}
+h3{ margin-top: 35%;}
+h5{ margin-top: 5%;}
+h4{Color:#ff6666;}
+#demo{
+  margin-top: 9%;
+  text-align:center;
+  background-color:#ffffff;
+  margin-left:-90px;
+  margin-right:-90px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+h2{Color: #ffffff;
+  text-align: center;
+  margin-bottom: 15%;
+}
+#t_bottom{
+  margin-top: 15%;
+}
+
+div.img
+{
+  margin:2px;
+  border-radius: 60px;
+  float:left;
+  text-align:center;
+}
+div.img img
+{ width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  display:inline;
+  margin:3px;
+  border:1px solid #ffffff;
+}
+div.img a:hover img
+{
+  border:1px solid #ff6666;
+}
+div.desc
+{
+  Color:#ffffff;
+  text-align:center;
+  font-weight:normal;
+  width:120px;
+  margin:2px;
+}
+
+#t_bo{
+  margin-top:410px;
+  margin-left: 400px;
+  Color:#ffffff;
+  border:#ffffff 1px solid;
+  width:128px;
+  height:64px;
+  display:inline;
+  line-height:64px;
+  font-size:18px;
+  border-radius: 28px;
+  background-color:#ff6666;
+}
+#t_bo:hover{
+  background-color:#f9f9f9;
+  cursor:pointer;
 }
