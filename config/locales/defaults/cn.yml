@@ -1,6 +1,6 @@
 cn:
   Home: 主页
-  Input JSON: 代码
+  Input JSON: JSON代码
   Language: 语言
   Menu: 菜单
   Sign up: 注册
@@ -8,6 +8,7 @@ cn:
   Submit: 执行
   Reset: 重置
   Courses: 课程
+  Code: 代码
   date:
     abbr_day_names:
     - 周日

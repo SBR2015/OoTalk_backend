@@ -210,6 +210,7 @@ $ ->
     $('#output_code').empty()
     $('#input_code').droppable('enable')
 
+
   #ゴミ箱
   $('#trash-can').droppable
     tolerance: "pointer"
@@ -238,7 +239,14 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
-
+  # I18n    
+  $('#Reset').attr('value',I18n.t('Reset'))
+  $('#Submit').attr('value',I18n.t('Submit'))
+  $('#Code').text(I18n.t('Code'))
+  $('#Input_JSON').text(I18n.t('Input JSON'))
+  $('#Courses').text(I18n.t('Courses'))
+  $('#Language').text(I18n.t('Language'))
+  $('#Menu').text(I18n.t('Menu'))
   ########## Courseリストはここから ############
 
   get_courses = ->

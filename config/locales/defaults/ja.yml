@@ -21,7 +21,7 @@
 
 ja:
   Home: ホーム
-  Input JSON: コード
+  Input JSON: JSONコード
   Language: 言語
   Menu: メニュー
   Sign up: サインアップ
@@ -31,6 +31,7 @@ ja:
   Courses: コース
   Excute Code: 実行文
   Excute Result: 実行結果
+  Code: コード
   date:
     abbr_day_names:
     - 日
