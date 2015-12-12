@@ -1,14 +1,13 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
   # Static Page
   root 'staticsite#index'
-  get '/about', to: 'staticsite#about'
 
   # Coding Page
   get '/code', to: 'code#index'
 
   # Json Coding page
-  resources :code_json, only: [:index], path: :codejson
-
+  # resources :code_json, only: [:index], path: :codejson
+  get '/codejson', to: 'code_json#index'
   # Doorkeeper
   use_doorkeeper do
     controllers :applications => 'oauth/applications'

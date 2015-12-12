@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/SBR2015/ootalk-syntaxlist.git
-  revision: 25e1409bed827c38667da0e0722d92e580257820
-  tag: v1.0.0
+  revision: f530c0919c9308a88b8dcb86225c88df20714d03
+  tag: v1.1.1
   specs:
     ootalk-syntaxlist (1.0.0)
 
@@ -75,7 +75,7 @@ GEM
     concurrent-ruby (1.0.0)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
-    devise (3.5.2)
+    devise (3.5.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -132,6 +132,8 @@ GEM
     http_parser.rb (0.6.0)
     httpclient (2.7.0.1)
     i18n (0.7.0)
+    i18n-js (2.1.2)
+      i18n
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -165,7 +167,7 @@ GEM
     multi_json (1.11.2)
     nenv (0.2.0)
     nested_form (0.3.2)
-    newrelic_rpm (3.14.0.305)
+    newrelic_rpm (3.14.1.311)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -343,6 +345,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   httpclient
+  i18n-js
   jbuilder (~> 2.0)
   meta_request
   newrelic_rpm

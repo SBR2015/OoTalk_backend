@@ -39,7 +39,7 @@ $ ->
       success: (data) ->
         console.log data
 #        $('#output_code').html syntaxHighlight JSON.stringify(data, undefined, 4)
-        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>実行文</th><th>実行結果</th></tr></thead><tbody></tbody></table>'
+        headline_text = '<table class = "table table-hover"><thead><tr><th></td><th>' + I18n.t('Excute Code') + '</th><th>' + I18n.t('Excute Result') + '</th></tr></thead><tbody></tbody></table>'
         $('#output_code').append(headline_text)
         for d, i in data
           line_text = '<tr><th>' + (i+1).toString() + '</th><td>' + d['exec'] + '</td><td>' + d['result'] + '</td></tr>'
@@ -135,7 +135,7 @@ $ ->
           'data-toggle': 'popover'
           'data-trigger': 'hover'
           title: l.name
-          'data-content': '説明').text(syntax_icons[i])
+          'data-content': l.description).text(syntax_icons[i])
 
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
@@ -210,6 +210,7 @@ $ ->
     $('#output_code').empty()
     $('#input_code').droppable('enable')
 
+
   #ゴミ箱
   $('#trash-can').droppable
     tolerance: "pointer"
@@ -238,7 +239,14 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
-
+  # I18n    
+  $('#Reset').attr('value',I18n.t('Reset'))
+  $('#Submit').attr('value',I18n.t('Submit'))
+  $('#Code').text(I18n.t('Code'))
+  $('#Input_JSON').text(I18n.t('Input JSON'))
+  $('#Courses').text(I18n.t('Courses'))
+  $('#Language').text(I18n.t('Language'))
+  $('#Menu').text(I18n.t('Menu'))
   ########## Courseリストはここから ############
 
   get_courses = ->
@@ -362,4 +370,5 @@ $ ->
     o = {}
     o["code[src]"] = JSON.stringify trees
     executeRequest(o)
+
   return
