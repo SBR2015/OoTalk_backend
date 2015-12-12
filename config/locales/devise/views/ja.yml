@@ -28,3 +28,4 @@ ja:
     shared:
     unlocks:
     sign_out: "サインアウト"
+    confirmation_problem: "確認メッセージ届けませんでしたか?"

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/SBR2015/ootalk-syntaxlist.git
-  revision: a532c2901c842d1ba7cb1bcb29b2bbbeeb578f26
-  tag: v1.1.0
+  revision: f530c0919c9308a88b8dcb86225c88df20714d03
+  tag: v1.1.1
   specs:
     ootalk-syntaxlist (1.0.0)
 
@@ -132,6 +132,8 @@ GEM
     http_parser.rb (0.6.0)
     httpclient (2.7.0.1)
     i18n (0.7.0)
+    i18n-js (2.1.2)
+      i18n
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -343,6 +345,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   httpclient
+  i18n-js
   jbuilder (~> 2.0)
   meta_request
   newrelic_rpm

@@ -14,23 +14,23 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-		<li><%= link_to 'Code', code_path %></li>
-        <li><a href="/codejson"><%= t('Input JSON') %></a></li>
-        <li><a href="#" id="subject"><%= t('Courses') %></a></li>
+		    <li><%= link_to 'Code', code_path, id: "Code" %></li>
+        <li><%= link_to 'Input JSON', codejson_path, id: "Input_JSON" %></li>
+        <li><a href="#" id="Courses">Courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t('Language') %>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="Language">Language
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to 'English', "#{request.path}" %></li>
             <li><%= link_to '日本語', "#{request.path}?lang=ja"%></li>
             <li><%= link_to '中文', "#{request.path}?lang=cn" %></li>
-            <li><a href="/?lang=vi">Tiếng Việt</a></li>
+            <li><%= link_to 'Tiếng Việt', "#{request.path}?lang=vi" %></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= t('Menu') %><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="Menu">Menu<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
 			<% if current_user.admin? %>

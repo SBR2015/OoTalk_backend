@@ -81,7 +81,7 @@ group :development do
 
   # chrome addon
   gem 'meta_request'
-  
+
   # generate ER
   gem 'rails-erd'
 
@@ -106,7 +106,7 @@ gem 'httpclient'
 
 # Ootalk
 gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git', :tag => 'v0.4.0'
-gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.git', :tag => 'v1.1.0'
+gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.git', :tag => 'v1.1.1'
 
 # database settings
 # gem 'foreigner'
@@ -119,3 +119,4 @@ gem 'devise'
 #gem 'omniauth-github'
 gem 'rails_admin'
 gem 'doorkeeper'
+gem 'i18n-js'
