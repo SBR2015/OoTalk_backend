@@ -28,3 +28,4 @@ cn:
     shared:
     unlocks:
     sign_out: "登出"
+    confirmation_problem: "无法得到确认信息?"

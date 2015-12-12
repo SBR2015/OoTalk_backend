@@ -28,3 +28,4 @@ en:
     shared:
     unlocks:
     sign_out: "Sign out"
+    confirmation_problem: "Didn't receive confirmation instructions?"

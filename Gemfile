@@ -81,7 +81,7 @@ group :development do
 
   # chrome addon
   gem 'meta_request'
-  
+
   # generate ER
   gem 'rails-erd'
 
@@ -119,3 +119,4 @@ gem 'devise'
 #gem 'omniauth-github'
 gem 'rails_admin'
 gem 'doorkeeper'
+gem 'i18n-js'
