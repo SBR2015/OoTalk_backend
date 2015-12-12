@@ -2,54 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body#toppage{
-  background: url(try.jpg) no-repeat top;
-  background-size:100% auto;
-  background-color:#ff6666;
+#t_top {
+  background: url(try.jpg) no-repeat left top;
+  background-size: 100% auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 50px;
   text-align: center;
 }
-#t_top,a{
+a {
   Color: #ffffff;
-  text-align: center;
 }
-h3{ margin-top: 35%;}
+h3{
+  margin-top: 40%;
+  padding-bottom:30px;
+  Color: #ffffff;
+}
 h5{
-  margin-top: 5%;
-  margin-bottom: 10%;
-  padding-bottom: 10px;
+  Color: #ffffff;
+  padding-bottom:60px;
 }
-h4{Color:#ff6666;}
+h4{
+  Color:#ff6666;
+}
+
 #demo{
   text-align:center;
   background-color:#ffffff;
-  margin-left:-90px;
-  margin-right:-90px;
-  padding-bottom: 5px;
+  margin-bottom:10%;
+  padding-bottom:5px;
   padding-top: 5px;
 }
-h2{Color: #ffffff;
+h2{
+  Color: #ffffff;
   text-align: center;
 }
-#t_middle{
-  margin-top: 20%;
-  margin-bottom: 20%;
+.container{
+  background-size: 100% auto;
+  min-width: 100%;
+  text-align: center;
+  background-Color:#ff6666;
 }
-#photo {
- min-width: 1000px;
+#t_middle {
+  margin:65% 0 100px 0;
+}
+#photo{
+  margin: 0 auto;
+  display: inline-block;
+  padding-bottom: 40px;
 }
   div.img {
     margin: 2px;
     border-radius: 60px;
     float: left;
   }
-  div.img img {
-    width: 140px;
-    height: 140px;
-    border-radius: 70px;
-    display: inline;
-    margin: 3px;
-    border: 1px solid #333333;
-  }
+div.img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  display: inline;
+  margin: 3px;
+  border: 1px solid #333333;
+}
   div.img a:hover img {
     border: 1px solid #ff6666;
   }
@@ -85,7 +101,7 @@ h2{Color: #ffffff;
   width:128px;
   height:60px;
   line-height:64px;
-  font-size:18px;
+  font-size:16px;
   border-radius: 28px;
   background-color:#ff6666;
   clear:both;
@@ -99,8 +115,6 @@ p.navbar-text{
   Color:#ffffff;}
 
 footer{
-  margin-top:10% ;
-  margin-bottom: 0;
   width: 100%;
   background-color: #303030;
   display: inline-block;
