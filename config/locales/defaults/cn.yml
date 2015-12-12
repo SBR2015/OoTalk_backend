@@ -9,6 +9,8 @@ cn:
   Reset: 重置
   Courses: 课程
   Code: 代码
+  Excute Code: 执行代码
+  Excute Result: 执行结果
   date:
     abbr_day_names:
     - 周日
