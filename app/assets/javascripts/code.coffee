@@ -135,7 +135,7 @@ $ ->
           'data-toggle': 'popover'
           'data-trigger': 'hover'
           title: l.name
-          'data-content': '説明').text(syntax_icons[i])
+          'data-content': l.description).text(syntax_icons[i])
 
         # 使えるbuttonを追加
         abstract_syntax_lists.append(line)
