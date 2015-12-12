@@ -29,6 +29,7 @@ h2{Color: #ffffff;
 }
 #t_middle{
   margin-top: 15%;
+  margin-bottom: 10%;
 }
 #photo {
   div.img {
@@ -74,7 +75,6 @@ h2{Color: #ffffff;
   }
 }
 #t_bo{
-  margin-left: 400px;
   Color:#ffffff;
   border:#ffffff 1px solid;
   width:128px;
@@ -84,6 +84,7 @@ h2{Color: #ffffff;
   font-size:18px;
   border-radius: 28px;
   background-color:#ff6666;
+  clear:both;
 }
 #t_bo:hover {
   background-color: #f9f9f9;
@@ -94,6 +95,8 @@ p.navbar-text{
   Color:#ffffff;}
 
 footer{
+  margin-top:10% ;
+  margin-bottom: 0;
   width: 100%;
   background-color: #303030;
   display: inline-block;
