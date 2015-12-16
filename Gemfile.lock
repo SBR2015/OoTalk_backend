@@ -7,10 +7,10 @@ GIT
 
 GIT
   remote: https://github.com/SBR2015/ootalk.git
-  revision: 61562c23fca91b367b11afdd6f5b3923d3f26605
-  tag: v0.4.0
+  revision: eafa7bdd9e031440ebe7bc9614ee2c325007af3c
+  tag: v0.5.2
   specs:
-    ootalk (0.4.0)
+    ootalk (0.5.2)
 
 GEM
   remote: https://rubygems.org/
@@ -295,7 +295,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    spring (1.5.0)
+    spring (1.6.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.5.2)
