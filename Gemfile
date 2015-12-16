@@ -105,7 +105,7 @@ end
 gem 'httpclient'
 
 # Ootalk
-gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git', :tag => 'v0.4.0'
+gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git', :tag => 'v0.5.2'
 gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.git', :tag => 'v1.1.1'
 
 # database settings
