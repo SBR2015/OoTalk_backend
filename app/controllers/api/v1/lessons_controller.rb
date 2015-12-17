@@ -1,4 +1,4 @@
-class Api::V1::LessonsController < ApplicationController
+class Api::V1::LessonsController < Api::V1::BaseController
   #before_action :validate_admin, except: [:index, :show]
   before_action :set_course
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]

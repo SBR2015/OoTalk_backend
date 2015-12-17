@@ -1,3 +1,4 @@
+# coding: utf-8
 require File.expand_path('../boot', __FILE__)
 
 # Load Ootalk Libraries
@@ -37,5 +38,15 @@ module OoTalkBackend
     # ↑ootalk, abs_list.rbで設定してるのでエラー吐く
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins 'localhost:3000', '127.0.0.1:3000', 'ootalk.herokuapp.com'
+        resource '*',
+                 :headers => :any,
+                 :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+                 :methods => [:get, :post, :options, :delete, :put]
+      end
+    end
   end
 end

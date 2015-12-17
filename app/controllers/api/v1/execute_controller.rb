@@ -1,4 +1,4 @@
-class Api::V1::ExecuteController < ApplicationController
+class Api::V1::ExecuteController < Api::V1::BaseController
   protect_from_forgery :except => [:create]
   def index
 

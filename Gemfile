@@ -101,9 +101,6 @@ group :production do
 
 end
 
-# Use http Clients
-gem 'httpclient'
-
 # Ootalk
 gem 'ootalk', :git => 'https://github.com/SBR2015/ootalk.git', :tag => 'v0.5.2'
 gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.git', :tag => 'v1.1.1'
@@ -113,10 +110,10 @@ gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.g
 
 # login settings
 gem 'devise'
-# gem 'devise-i18n'
-# gem 'omniauth'
-# gem 'omniauth-facebook'
-#gem 'omniauth-github'
+gem 'omniauth'
+gem 'devise_token_auth'
+
 gem 'rails_admin'
 gem 'doorkeeper'
 gem 'i18n-js'
+gem 'rack-cors', :require => 'rack/cors'
