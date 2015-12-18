@@ -40,7 +40,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   #
   # devise Settings
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  hostname = ENV['DEV_MAILER_HOST'] || 'localhost'
+  portnumber = ENV['DEV_MAILER_PORT'] || 3000
+  config.action_mailer.default_url_options = { host: hostname, port: portnumber }
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
