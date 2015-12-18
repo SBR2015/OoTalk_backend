@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # Devise
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
 
   # API v1
   namespace :api, constraints: { format: :json } do
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
         resources :lessons, except: [:new, :edit]
       end
       get 'users/profile'
+      mount_devise_token_auth_for 'User', at: 'auth'
     end
   end
 end
