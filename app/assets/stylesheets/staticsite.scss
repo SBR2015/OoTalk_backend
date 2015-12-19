@@ -2,123 +2,119 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.navbar {
+  margin: 0;
+}
+
+//Top page CSS
+
+#top_page{;
+  text-align: center;
+  //font-size: 1.2em;
+  background-color: #ff6666;
+  padding: 0;
+}
+
 #t_top {
-  background: url(try.jpg) no-repeat left top;
+  background: url(try.jpg) no-repeat;
   background-size: 100% auto;
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  left: 0px;
-  top: 50px;
-  text-align: center;
-}
-a {
-  Color: #ffffff;
-}
-h3{
-  margin-top: 40%;
-  padding-bottom:30px;
-  Color: #ffffff;
-}
-h5{
-  Color: #ffffff;
-  padding-bottom:60px;
-}
-h4{
-  Color:#ff6666;
+  padding-top: 30%;
+  padding-bottom: 10%;
+  color: white;
+
+  #mission-title{
+    font-size: x-large;
+  }
 }
 
-#demo{
-  text-align:center;
-  background-color:#ffffff;
-  margin-top:3%;
-  margin-bottom:10%;
-  padding-bottom:5px;
-  padding-top: 5px;
-}
-h2{
-  Color: #ffffff;
-  text-align: center;
-  padding-top:30px;
-  padding-bottom:60px;
-}
-.container{
-  background-size: 100% auto;
-  min-width: 100%;
-  text-align: center;
-  background-Color:#ff6666;
-}
 #t_middle {
-  margin:65% 0 100px 0;
-}
-#photo{
-  margin: 0 auto;
-  display: inline-block;
-  padding-bottom: 40px;
-}
-  div.img {
-    margin: 2px;
-    border-radius: 60px;
-    float: left;
+  margin-top: 0;
+  background-color: white;
+  padding: 2% 5%;
+
+  #about-title{
+    font-size: x-large;
+    color: #ff6666;
   }
-div.img img {
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  display: inline;
-  margin: 3px;
-  border: 1px solid #333333;
 }
-  div.img a:hover img {
-    border: 1px solid #ff6666;
-  }
-  div.desc {
-    Color: #ffffff;
-    text-align: center;
-    font-weight: normal;
-    width: 120px;
-    margin: 2px;
+
+#t_bottom{
+  margin: 0;
+  color: white;
+  padding: 5% 5%;
+
+  #team-title {
+    font-size: x-large;
+    margin-bottom: 30px;
   }
 
-#contact_icon {
-  div.img {
-    margin: 1px;
-    border-radius: 20px;
-    float: right;
-  }
-  div.img img {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    margin: 3px;
-    border: 1px solid #ffffff;
-  }
-  div.img a:hover img {
-    border: 1px solid #ff6666;
-  }
-}
-#t_bo{
-  margin: 0 auto;
-  Color:#ffffff;
-  border:#ffffff 1px solid;
-  width:128px;
-  height:60px;
-  line-height:64px;
-  font-size:16px;
-  border-radius: 28px;
-  background-color:#ff6666;
-  clear:both;
-}
-#t_bo:hover {
-  background-color: #f9f9f9;
-  cursor: pointer;
-}
-hr{color: white}
-p.navbar-text{
-  Color:#ffffff;}
+  #profile-photo {
+    display: inline-block;
+    padding-bottom: 40px;
 
-footer{
-  width: 100%;
-  background-color: #303030;
-  display: inline-block;
+    img {
+      border-radius: 60px;
+      width: 120px;
+      height: 120px;
+      margin: 5px;
+      background-color: white;
+    }
+  }
+
+  #contact {
+    border: white 1px solid;
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+
+  #contact:hover {
+    background-color: white;
+    color: #ff6666;
+    cursor: pointer;
+  }
 }
+
+//Footer CSS
+
+hr {
+  margin: 0;
+  color: white;
+}
+
+#foot {
+  color: white;
+}
+
+//#contact_icon {
+//  div.img {
+//    margin: 1px;
+//    border-radius: 20px;
+//    float: right;
+//  }
+//  div.img img {
+//    width: 40px;
+//    height: 40px;
+//    border-radius: 20px;
+//    margin: 3px;
+//    border: 1px solid #ffffff;
+//  }
+//  div.img a:hover img {
+//    border: 1px solid #ff6666;
+//  }
+//}
+//
+//
+//hr{color: white}
+//p.navbar-text{
+//  Color:#ffffff;}
+//
+//footer{
+//  width: 100%;
+//  background-color: #303030;
+//  display: inline-block;
+//}
