@@ -81,40 +81,57 @@
 
 //Footer CSS
 
-hr {
-  margin: 0;
-  color: white;
-}
+footer {
+  color: #999999;
 
-#foot {
-  color: white;
-}
+  #contact-link{
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    text-transform: uppercase;
 
-//#contact_icon {
-//  div.img {
-//    margin: 1px;
-//    border-radius: 20px;
-//    float: right;
-//  }
-//  div.img img {
-//    width: 40px;
-//    height: 40px;
-//    border-radius: 20px;
-//    margin: 3px;
-//    border: 1px solid #ffffff;
-//  }
-//  div.img a:hover img {
-//    border: 1px solid #ff6666;
-//  }
-//}
-//
-//
-//hr{color: white}
-//p.navbar-text{
-//  Color:#ffffff;}
-//
-//footer{
-//  width: 100%;
-//  background-color: #303030;
-//  display: inline-block;
-//}
+    ul {
+      padding: 0;
+      li {
+        display: inline;
+        line-height: 42px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  #contact-icon {
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+
+  #contact-icon i:hover {
+    color: white;
+  }
+
+  #privacy {
+    margin-top: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    ul {
+      border-top: 1px solid #999999;
+      text-align: right;
+      li {
+        display: inline;
+        line-height: 30px;
+        font-size: small;
+      }
+    }
+  }
+
+  a {
+    color: #999999;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
