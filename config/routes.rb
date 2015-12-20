@@ -27,8 +27,12 @@ Rails.application.routes.draw do
       resources :courses, except: [:new, :edit] do
         resources :lessons, except: [:new, :edit]
       end
-      get 'users/profile'
+
       mount_devise_token_auth_for 'User', at: 'auth'
+
+      # authorization needed
+      get 'users/profile', to: 'users#profile'
+      get 'users/code', to: 'users#code'
     end
   end
 end

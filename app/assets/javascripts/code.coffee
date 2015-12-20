@@ -191,7 +191,6 @@ $ ->
 
   lang = getParameterByName "lang"
   initializeSyntaxList(lang)
-
   # Drop初期化
   $('#input_code').droppable
     tolerance: "pointer"
