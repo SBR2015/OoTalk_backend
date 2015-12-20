@@ -118,6 +118,5 @@ gem 'omniauth'
 gem 'devise_token_auth'
 
 gem 'rails_admin'
-gem 'doorkeeper'
 gem 'i18n-js'
 gem 'rack-cors', :require => 'rack/cors'

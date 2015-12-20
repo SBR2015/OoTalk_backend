@@ -7,7 +7,6 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def code
-    @codes = @user.codes
     render "code", :formats => [:json], :handlers => [:jbuilder]
   end
 
@@ -15,6 +14,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def setuser
     @user = current_user
+    @codes = @user.codes
   end
 
 end

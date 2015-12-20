@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
   # Static Page
-  root 'staticsite#index'
+  # root 'staticsite#index'
 
   # Coding Page
-  get '/code', to: 'code#index'
+  # get '/code', to: 'code#index'
 
   # Json Coding page
   # resources :code_json, only: [:index], path: :codejson
-  get '/codejson', to: 'code_json#index'
+  # get '/codejson', to: 'code_json#index'
   # Doorkeeper
-  use_doorkeeper do
-    controllers :applications => 'oauth/applications'
-  end
+  # use_doorkeeper do
+  #   controllers :applications => 'oauth/applications'
+  # end
+  
+  # Frontend App
+  mount_ember_app :frontend, to: "/"
 
   # Rails Admin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
