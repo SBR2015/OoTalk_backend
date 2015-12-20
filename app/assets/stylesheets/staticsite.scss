@@ -6,7 +6,7 @@
   margin: 0;
 }
 
-//Top page CSS
+/*-------------Top page styling-------------*/
 
 #top_page{;
   text-align: center;
@@ -30,7 +30,7 @@
 #t_middle {
   margin-top: 0;
   background-color: white;
-  padding: 2% 5%;
+  padding: 5% 5%;
 
   #about-title{
     font-size: x-large;
@@ -76,62 +76,5 @@
     background-color: white;
     color: #ff6666;
     cursor: pointer;
-  }
-}
-
-//Footer CSS
-
-footer {
-  color: #999999;
-
-  #contact-link{
-    float: left;
-    margin-top: 10px;
-    margin-left: 40px;
-    text-transform: uppercase;
-
-    ul {
-      padding: 0;
-      li {
-        display: inline;
-        line-height: 42px;
-        margin-right: 20px;
-      }
-    }
-  }
-
-  #contact-icon {
-    float: right;
-    margin-top: 10px;
-    margin-right: 40px;
-  }
-
-  #contact-icon i:hover {
-    color: white;
-  }
-
-  #privacy {
-    margin-top: 60px;
-    padding-right: 40px;
-    padding-left: 40px;
-
-    ul {
-      border-top: 1px solid #999999;
-      text-align: right;
-      li {
-        display: inline;
-        line-height: 30px;
-        font-size: small;
-      }
-    }
-  }
-
-  a {
-    color: #999999;
-  }
-
-  a:hover {
-    color: white;
-    text-decoration: none;
   }
 }
