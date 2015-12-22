@@ -97,8 +97,6 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
   gem 'unicorn'
-  gem 'newrelic_rpm'
-
 end
 
 # Ootalk
@@ -107,6 +105,12 @@ gem 'ootalk-syntaxlist', :git => 'https://github.com/SBR2015/ootalk-syntaxlist.g
 
 # database settings
 # gem 'foreigner'
+
+# newrelic
+gem 'newrelic_rpm'
+
+# emberjs integration
+gem 'ember-cli-rails'
 
 # login settings
 gem 'devise'

@@ -5,7 +5,7 @@ class ConfirmationsController < Devise::ConfirmationsController
     if params[:redirect_url] && params[:redirect_url].length > 0
       params[:redirect_url]
     else
-      super.after_confirmation_path_for(resource_name, resource)
+      super
     end
   end
 end
