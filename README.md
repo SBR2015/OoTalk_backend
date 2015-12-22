@@ -14,20 +14,19 @@ $ bundle install --without production
 $ bundle exec rails s
 ```
 
-# Write later
-先生(プロダクトオーナ)
+Team
 ---------------
-- [Yoshihide Chubachi](https://github.com/ychubachi):中鉢 欣秀
-
-Team members
----------------
-- [shinjukujohnny](https://github.com/shinjukujohnny):吉川久文(スクラムマスター)
-- [Yusuke Ohashi](https://github.com/yuchan):大橋佑亮
+- [shinjukujohnny](https://github.com/shinjukujohnny):吉川久文
+- [Yusuke Ohashi](https://github.com/yuchan)
 - [pyar6329](https://github.com/pyar6329):有馬司
 - [a1447ll](https://github.com/a1447ll):LE BAO LINH
 - [Olivia-tou](https://github.com/Olivia-tou):佟必超
 - [Ounennhei](https://github.com/Ounennhei):王年平
 
+Mentor
+---------------
+- [Yoshihide Chubachi](https://github.com/ychubachi):中鉢 欣秀
+ 
 App information
 ---------------
 - [Travis CI](https://travis-ci.org/SBR2015/OoTalk_backend)
