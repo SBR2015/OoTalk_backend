@@ -1,3 +1,80 @@
 // Place all the styles related to the staticsite controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+  margin: 0;
+}
+
+/*-------------Top page styling-------------*/
+
+#top_page{;
+  text-align: center;
+  //font-size: 1.2em;
+  background-color: #ff6666;
+  padding: 0;
+}
+
+#t_top {
+  background: url(try.jpg) no-repeat;
+  background-size: 100% auto;
+  padding-top: 30%;
+  padding-bottom: 10%;
+  color: white;
+
+  #mission-title{
+    font-size: x-large;
+  }
+}
+
+#t_middle {
+  margin-top: 0;
+  background-color: white;
+  padding: 5% 5%;
+
+  #about-title{
+    font-size: x-large;
+    color: #ff6666;
+  }
+}
+
+#t_bottom{
+  margin: 0;
+  color: white;
+  padding: 5% 5%;
+
+  #team-title {
+    font-size: x-large;
+    margin-bottom: 30px;
+  }
+
+  #profile-photo {
+    display: inline-block;
+    padding-bottom: 40px;
+
+    img {
+      border-radius: 60px;
+      width: 120px;
+      height: 120px;
+      margin: 5px;
+      background-color: white;
+    }
+  }
+
+  #contact {
+    border: white 1px solid;
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+
+  #contact:hover {
+    background-color: white;
+    color: #ff6666;
+    cursor: pointer;
+  }
+}

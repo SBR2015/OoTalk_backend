@@ -1,4 +1,25 @@
-<h1>Staticsite#index</h1>
-<p>Find me in app/views/staticsite/index.html.erb</p>
+<div id="top_page" >
+  <div id="t_top">
+    <div id="mission-title">* Our Mission *</div>
+    <p>Our Mission is creating the borderless world through online programing education</p>
+  </div>
 
-<strong>here is top page.</strong>
+  <div id="t_middle">
+    <div id="about-title">About</div>
+    <p>We are a research group at AIIT, Advanced Institute of Industrial Technology, in Tokyo.
+        We are studying engineering and project management.
+        Our activity is based on scrum methodology, and we also developing software in agile way.
+    </p>
+    </div>
+
+  <div id="t_bottom">
+    <div id="team-title">Team</div>
+        <% 6.times do %>
+            <div id="profile-photo">
+                <a target="_blank" href="https://github.com/pyar6329"><%= image_tag "pyar.png" %></a>
+                <div id="name">Tsukasa Arima</div>
+            </div>
+        <% end %>
+    <div id="contact">Contact us</div>
+  </div>
+</div>

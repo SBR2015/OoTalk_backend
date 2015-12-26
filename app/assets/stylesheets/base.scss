@@ -1,8 +1,80 @@
+/*-------------Footer styling-------------*/
+
+footer {
+  color: #999999;
+
+  #contact-link{
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    text-transform: uppercase;
+
+    ul {
+      padding: 0;
+      li {
+        display: inline;
+        line-height: 42px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  #contact-icon {
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+
+  #contact-icon i:hover {
+    color: white;
+  }
+
+  #privacy {
+    margin-top: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    ul {
+      border-top: 1px solid #999999;
+      text-align: right;
+      li {
+        display: inline;
+        line-height: 30px;
+        font-size: small;
+      }
+    }
+  }
+
+  a {
+    color: #999999;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/*-------------Header styling-------------*/
+
+#header {
+  text-transform: uppercase;
+
+  a {
+    color: #999999;
+  }
+
+  a:hover {
+    background-color: #ff6666;
+    color: white;
+  }
+}
 
 @media (min-width: 768px) {
   .navbar-brand .brand-text {
-     top: -5px;
-     position: relative;
+    top: -7px;
+    position: relative;
+    font-size: 14px;
   }
 }
 
