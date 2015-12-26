@@ -14,18 +14,7 @@
 
   <div id="t_bottom">
     <div id="team-title">Team</div>
-        <% require 'open-uri' %>
-        <% members = ["yuchan", "pyar6329", "a1447ll", "Olivia-tou", "Ounennhei", "kikkawakikkawa"] %>
-        <% for member, i in members do %>
-            <% url = "https://api.github.com/users/" + member %>
-            <% m_data = JSON.load(open(url)) %>
-            <div id="profile-photo">
-              <a href= <%= m_data["html_url"] %> >
-                <img src= <%= m_data["avatar_url"] %> >
-                <div id="name"><%= member %></div>
-              </a>
-            </div>
-        <% end %>
+    <div id="team-members"></div>
     <div id="contact">Contact us</div>
   </div>
 </div>
