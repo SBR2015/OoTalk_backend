@@ -14,10 +14,16 @@
 
   <div id="t_bottom">
     <div id="team-title">Team</div>
-        <% 6.times do %>
+        <% require 'open-uri' %>
+        <% members = ["yuchan", "pyar6329", "a1447ll", "Olivia-tou", "Ounennhei", "kikkawakikkawa"] %>
+        <% for member, i in members do %>
+            <% url = "https://api.github.com/users/" + member %>
+            <% m_data = JSON.load(open(url)) %>
             <div id="profile-photo">
-                <a target="_blank" href="https://github.com/pyar6329"><%= image_tag "pyar.png" %></a>
-                <div id="name">Tsukasa Arima</div>
+              <a href= <%= m_data["html_url"] %> >
+                <img src= <%= m_data["avatar_url"] %> >
+                <div id="name"><%= member %></div>
+              </a>
             </div>
         <% end %>
     <div id="contact">Contact us</div>

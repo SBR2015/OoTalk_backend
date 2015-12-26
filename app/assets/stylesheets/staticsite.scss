@@ -59,6 +59,15 @@
       margin: 5px;
       background-color: white;
     }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   #contact {
