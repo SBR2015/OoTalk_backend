@@ -54,6 +54,7 @@ $ ->
       appendTo: "body"
       helper: "clone"
       start: (event, ui) ->
+        $(ui.helper).addClass("ui-draggable-helper")
         console.log "start drag"
       drag: (event, ui) ->
         console.log "while drag"
@@ -238,7 +239,7 @@ $ ->
       lineNumbers: true
       tabSize: 2
 
-  # I18n    
+  # I18n
   $('#Reset').attr('value',I18n.t('Reset'))
   $('#Submit').attr('value',I18n.t('Submit'))
   $('#Code').text(I18n.t('Code'))
