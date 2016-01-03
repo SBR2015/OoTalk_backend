@@ -92,6 +92,7 @@ window.codeui =
             appendTo: "body"
             helper: "clone"
             start: (event, ui) ->
+                $(ui.helper).addClass("ui-draggable-helper")
                 console.log "start drag"
             drag: (event, ui) ->
                 console.log "while drag"
