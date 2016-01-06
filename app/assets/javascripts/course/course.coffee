@@ -1,4 +1,4 @@
-window.cource =
+window.course =
     get_courses: ->
         URL = '/api/v1/courses.json'
         $.get URL, null, (lists) =>
