@@ -28,7 +28,6 @@ window.codeutil =
     initSyntax: ->
         lang = codeutil.getParameterByName "lang"
         #syntax_listのアイコン
-        ICONS = ['+', '−', '×', '÷', '%', 'log', 'aⁿ', '&', '!&', 'ǀǀ', '!ǀǀ', '⊕', '=', '≠','>', '≥', '<', '≤','→', '↻', 'if','a', '0']
         URL = "/api/v1/abstractsyntax/"
         LANG = lang ? "en"
         $.get URL + LANG, null, (lists) =>
@@ -43,7 +42,7 @@ window.codeutil =
                     'data-toggle': 'popover'
                     'data-trigger': 'hover'
                     title: l.name
-                    'data-content': l.description).text(ICONS[i])
+                    'data-content': l.description).text(l.symbol)
 
                 # 使えるbuttonを追加
                 abstract_syntax_lists.append(line)
