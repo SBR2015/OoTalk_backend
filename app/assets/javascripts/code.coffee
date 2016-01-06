@@ -29,11 +29,11 @@ $ ->
             $("#trash-o").fadeIn()
             $("#trash-c").hide()
             $(this).css
-            width: "300px"
+                width: "300px"
             $(this).append()
         out: (event, ui)->
             $(this).css
-            width: "30px"
+                width: "30px"
         drop: (event, ui) ->
             $(ui.draggable).remove()
             $("#trash-o").hide()
