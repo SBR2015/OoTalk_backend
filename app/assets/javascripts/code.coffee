@@ -93,7 +93,7 @@ $ ->
         )
 
     # course click
-    $('#course_list').on 'click', 'div', ->
+    $('#Courses').on 'click', 'div', ->
         course.get_lessons(this.id)
         course.show_lessons()
         $('.breadcrumb').empty().append('<li id="courses"><i class="fa fa-book"></i>Courses</li><li id="lessons"><i class="fa fa-file-text-o"></i>Lessons</li>')
