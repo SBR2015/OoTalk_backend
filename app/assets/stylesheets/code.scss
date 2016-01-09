@@ -154,18 +154,18 @@
   display: inline-block;
   border: none;
   border-radius: 10px;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   padding: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  // margin-right: 5px;
+  // margin-bottom: 5px;
   text-align: center;
   //font-weight: bold;
   font-family: serif;
-  text-shadow: 1px 1px #aaaaaa;
+  // text-shadow: 1px 1px #aaaaaa;
   cursor: move;
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   background: lightblue;
   //box-shadow: 1px 1px #aaaaaa;
 }
@@ -173,6 +173,8 @@
   #input_code {
     border: 1px solid #aaaaaa;
     min-height: 400px;
+    height:auto !important;
+    height: 400px;
     min-width: 40px;
     margin-bottom: 5px;
 

@@ -8,7 +8,7 @@ window.codeui =
         clone_string = clone_drag.attr('string')
         this_string = clone_string
         if typeof clone_string isnt 'undefined' then clone_string else null
-        
+
         # もう既に子がいればbreak
         return if this_string is null
 
@@ -43,6 +43,8 @@ window.codeui =
                     drop: (event, ui) ->
                         $(this).append(codeui.clone_dragged(ui))
                         $("#input_code").droppable('enable')
+                        current_height = $("#input_code").outerHeight()
+                        $('#trash-can').css("height", current_height + "px")
                         return
                     #２度ドロップを防ぐ
                     over: (event, ui) ->
@@ -104,7 +106,7 @@ window.codeui =
 
     treeNode: ->
         ootalk.tree()
-        
+
     createTreeNode: (parent, parentnodeid) ->
         children = parent.children()
         node = null
@@ -117,4 +119,3 @@ window.codeui =
                 codeui.createTreeNode($(childnode), node.nodeid);
             else
                 codeui.createTreeNode($(childnode));
-

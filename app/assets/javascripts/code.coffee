@@ -1,6 +1,6 @@
 $ ->
     sitei18n.init()
-    
+
     # Drop初期化
     $('#input_code').droppable
         tolerance: "pointer"
@@ -8,13 +8,14 @@ $ ->
             return true if $element.parent().attr('id') is 'abstract_syntax_lists'
         drop: (event, ui) ->
             $(this).append(codeui.clone_dragged (ui))
+            current_height = $(this).outerHeight()
+            $('#trash-can').css("height", current_height + "px")
             return
 
     # Sort初期化
     $('#input_code').sortable
         connectWith: '#child-line'
 
-    #reset button
     $("input[type ='reset']").click ->
         $('#input_code').empty()
         $('#output_code').empty()
@@ -29,13 +30,21 @@ $ ->
             $("#trash-o").fadeIn()
             $("#trash-c").hide()
             $(this).css
+                height: $("#input_code").outerHeight() + "px"
                 width: "300px"
             $(this).append()
         out: (event, ui)->
             $(this).css
+                height: $("#input_code").outerHeight() + "px"
                 width: "30px"
         drop: (event, ui) ->
             $(ui.draggable).remove()
+            current_height = $("#input_code").outerHeight()
+            if current_height < 454
+              $(this).css("height", "400px")
+            else
+              del_height = current_height - 54
+              $(this).css("height", del_height + "px")
             $("#trash-o").hide()
             $("#trash-c").fadeIn()
             $(this).animate({width: "30px"}, 1000)
@@ -61,7 +70,7 @@ $ ->
         trees = []
         codeui.initNode()
         codeui.createTreeNode($("#input_code"))
-        console.log codeui.treeNode() 
+        console.log codeui.treeNode()
         for elem in codeui.treeNode()
             trees.push {"Program": elem}
 
