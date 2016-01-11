@@ -105,3 +105,37 @@ $ ->
         return
 
     codeutil.initSyntax()
+
+    #JSON -> HTML
+    child = (obj) ->
+      childs = []
+      $.each obj, (k) ->
+        if typeof obj[k] == "object"
+          childs.push(obj[k])
+      return childs
+
+    json_to_html = (obj) ->
+      return if obj is null
+      $line= $("<div></div>")
+      key = Object.keys(obj)[0]
+      if key isnt "Left"
+        $line.addClass(key)
+      if child(obj)[0] is null
+        $line.text(obj[key])
+      else
+        for c in child(obj)
+          $line.append json_to_html(c)
+      return $line
+
+    $.ajax
+        url: 'https://raw.githubusercontent.com/SBR2015/ootalk-static/master/json/input_code.json'
+        type:'GET'
+        dataType: 'json'
+        success: (data) ->
+          for d in data
+            program = d.Program
+            console.log json_to_html(program)
+        error: (XMLHttpRequest, textStatus, errorThrown) ->
+            console.log "Error"
+
+
