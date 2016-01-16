@@ -119,7 +119,7 @@ $ ->
       $line= $("<div></div>")
       key = Object.keys(obj)[0]
       if key isnt "Left"
-        $line.addClass(key)
+        $line.attr("class_name", key)
       if child(obj)[0] is null
         $line.text(obj[key])
       else
