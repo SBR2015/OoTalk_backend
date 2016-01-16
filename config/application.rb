@@ -41,7 +41,7 @@ module OoTalkBackend
 
     config.middleware.use Rack::Cors do
       allow do
-        origins 'localhost:3000', '127.0.0.1:3000', 'ootalk.herokuapp.com'
+        origins 'localhost', '127.0.0.1', 'ootalk.herokuapp.com'
         resource '*',
                  :headers => :any,
                  :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
