@@ -1,7 +1,5 @@
 # Author: Linh, Ounenhei, yuchan, Tsukasa Arima, Olivia
 
-ootalk = require 'ootalk'
-
 window.codeui =
     clone_dragged: (ui) ->
         clone_drag = $(ui.draggable).clone()
