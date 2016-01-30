@@ -3,7 +3,6 @@ require File.expand_path('../boot', __FILE__)
 
 # Load Ootalk Libraries
 require 'ootalk'
-require 'ootalk/syntaxlist'
 include Ootalk
 
 require "rails"
