@@ -3,10 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe "GET #profile" do
     context 'login user' do
-      login_user
       it "returns http success" do
+        user = FactoryGirl.create(:user)
+        user.confirm! # or set a confirmed_at inside the factory. Only necessary if you are      using the confirmable module
+        sign_in user
+
         get :profile, {}
-        expect(response).to have_http_status(:success)
+        expect(response).not_to have_http_status(:success)
       end
     end
 
