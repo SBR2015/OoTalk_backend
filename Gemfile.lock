@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/SBR2015/ootalk.git
-  revision: 72fb07640d27a4219cd9491fd815c27d3d93d879
+  revision: 367ee29bd736dfd06b332b23bad77c06fcac7035
   specs:
-    ootalk (0.5.2)
+    ootalk (0.5.3)
 
 GEM
   remote: https://rubygems.org/
