@@ -28,7 +28,7 @@ window.codeutil =
     initSyntax: ->
         lang = codeutil.getParameterByName "lang"
         #syntax_listのアイコン
-        URL = "/api/v1/abstractsyntax/"
+        URL = "https://ootalk-syntax-list.herokuapp.com/"
         LANG = lang ? "en"
         $.get URL + LANG, null, (lists) =>
             abstract_syntax_lists = $("#abstract_syntax_lists")
