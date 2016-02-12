@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SBR2015/ootalk.git
-  revision: 367ee29bd736dfd06b332b23bad77c06fcac7035
+  revision: 1defea6bb3f2c89792f9bd61308633842d1505ca
   specs:
     ootalk (0.5.3)
 
